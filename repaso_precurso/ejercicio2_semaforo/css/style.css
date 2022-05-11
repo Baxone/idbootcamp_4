@@ -1,0 +1,64 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.semaforo {
+    margin: 40px auto;
+    width: 500px;
+}
+
+.semaforo>div{
+    background-color: green;
+}
+
+.semaforo div{
+    margin: 0 auto;
+}
+
+.semaforo .semicirculo{
+    width: 30%;
+    height: 25px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.semaforo .cabecera{
+    width: 50%;
+    height: 30px;
+}
+
+.semaforo .cuerpo{
+    width: 70%;
+    padding: 20px 0 40px 0;
+}
+
+.semaforo .cuerpo div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.semaforo .cuerpo div:first-child{
+    background-color: red;
+}
+
+.semaforo .cuerpo div:last-child{
+    background-color: lightgreen;
+}
+
+.semaforo .cuerpo div:nth-child(2){
+    background-color: gold;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.semaforo .pata{
+    height: 400px;
+    width: 30px;
+}
+
+.semaforo .pie{
+    width: 70%;
+    height: 30px;
+}
