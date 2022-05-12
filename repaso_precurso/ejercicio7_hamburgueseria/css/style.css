@@ -1,0 +1,88 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+/* montserrat 400 y 700  Handlee */
+/* fontawesome cdn 6.0  */
+/*
+font-family: 'Handlee', cursive;
+font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+html{
+    /* para generar un scroll animado con ancla */
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fuentePrincipal: 'Montserrat', sans-serif;
+    --fuenteSecundaria: 'Handlee', cursive;
+    --colorPrincipal: #fa573a;
+    --colorSecundario: #21242e;
+    --fontSize: 1em;
+    --anchoMaximo: 1100px;
+    --marginGrid: 1em;
+}
+
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: var(--fontSize);
+}
+
+.container{
+    max-width: var(--anchoMaximo);
+    margin: 0 auto;
+}
+
+/* inicio header */
+
+header .nav_top{
+    background-color: var(--colorSecundario);
+    padding: var(--marginGrid);
+}
+
+header .nav_top .container{
+    display: flex;
+    justify-content: space-around;
+}
+
+header .nav_top a{
+    text-decoration: none;
+}
+
+header .nav_top a i{
+    color: var(--colorPrincipal);
+    font-size: 140%;
+}
+
+header .nav_top a span{
+    color: white;
+    display: none;
+}
+
+/* final header */
+
+/* mediaquerys */
+
+/* breakpoint 768px */
+@media(min-width: 48em){
+    
+    header .nav_top a span{
+      display: inline;
+    }
+
+    header .nav_top .container{
+      justify-content: space-between;
+    }
+
+
+}

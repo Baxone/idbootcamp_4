@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: grey;
+}
+
+.campo{
+    background-color: green;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.campo div{
+    margin: 0 auto;
+}
+
+.campo .mediocampo{
+    height: 300px;
+    border: 4px solid white;
+    border-bottom: 2px solid white;
+}
+
+.campo .mediocampo .areagrande {
+    width: 80%;
+    height: 40%;
+}
+
+.campo .mediocampo .areapeq{
+    width: 60%;
+    height: 50%;
+}
+
+.campo .mediocampo :is(.areagrande, .areapeq){
+    border-bottom: 4px solid white;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+}
+
+
+.campo .central{
+    width: 200px;
+    height: 200px;
+    border: 4px solid white;
+}
+
+.campo .central>div{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+   
+}
+
+.campo :is(.central, .central>div){
+     border-radius: 50%;
+     position: absolute;
+    /* otra tecnica de centrado de elementos */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+
+
+#abajo{
+    transform: rotateZ(180deg)
+}
+
