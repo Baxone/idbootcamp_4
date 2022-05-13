@@ -69,7 +69,242 @@ header .nav_top a span{
     display: none;
 }
 
+header nav{
+    padding: var(--marginGrid);
+}
+
+header nav .logo{
+    float: left;
+    max-width: 100px;
+}
+
+header nav .hamburguesa{
+    float: right;
+    cursor: pointer;
+    width: 2em;
+}
+
+header nav .hamburguesa div{
+    border-top: 2px solid #aaa;
+    margin-bottom: 0.625em;
+}
+
+header nav .menu {
+    clear: both;
+    padding-top: 0.625em /* 10px */;
+    text-align: center;
+}
+
+header nav .menu a{
+    display: block;
+    text-decoration: none;
+    padding: var(--marginGrid);
+    color: #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+header nav .menu li:last-child a{
+    border: 0px;
+}
+
+header nav .menu :is(.activo, a:hover){
+    color: var(--colorPrincipal);
+}
+
+header nav:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;   
+}
 /* final header */
+
+/* principo de footer */
+
+footer{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background-color: var(--colorSecundario);
+    color: white;
+    padding: var(--marginGrid);
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color:  var(--colorPrincipal)
+}
+
+.arriba{
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    font-size: 2em;
+}
+
+.arriba a{
+    color: var(--colorPrincipal)
+}
+
+/* final footer */
+
+/* inicio de hero */
+
+.hero{
+    background-image: url(../images/fondo.jpg);
+    background-color: #999;
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+}
+
+
+.hero .container{
+    width: 95%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+ 
+
+.hero h1{
+    font-family: var(--fuenteSecundaria);
+    font-size: 230%;
+    color: white;
+}
+
+.hero :is(h2, .container>div){
+    margin: var(--marginGrid) 0;
+}
+
+.hero h2{
+    color: var(--colorPrincipal);
+    font-size: 125%;
+    text-shadow: 2px 2px 3px black;
+}
+
+.hero p{
+    color: white;
+    font-size: 115%;
+}
+
+.boton{
+    display: inline-block;
+    background-color: var(--colorPrincipal);
+    padding: 1.15em;
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--colorPrincipal);
+}
+
+.boton:hover{
+    background-color: transparent;
+    color: var(--colorPrincipal)
+   
+}
+
+.boton:hover i{
+    transition: 0.5s;
+    transform: translateX(5px);
+}
+
+.hero .social{
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero .social a{
+    color: white;
+    text-decoration: none;
+    font-size: 200%;
+}
+/* final de hero*/
+
+/* inicio Ourservices */
+section{
+    padding: 2.5em 0 4em 0;
+}
+
+section h2{
+    color: black;
+    font-family: var(--fuenteSecundaria);
+    font-size: 200%;
+    text-align: center;
+}
+
+section h2 span {
+    color: var(--colorPrincipal);
+}
+
+section .underline {
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+    font-weight: 700;
+    color: var(--colorPrincipal);
+    text-align: center;
+}
+
+section .underline hr{
+    position: absolute;
+    width: 100%;
+    top: -1px;
+    border-color: var(--colorPrincipal);
+}
+
+
+
+
+#ourservices .grid{
+    display: grid;
+    gap: var(--marginGrid);
+    padding: 0 var(--marginGrid);
+}
+
+section article{
+    padding: calc(var(--marginGrid)*2) 0;
+    border-bottom: 1px solid #aaa;
+}
+
+section article h3{
+    font-weight: 700;
+    margin: 0.5em 0;
+    font-size: 110%;
+}
+
+section p{
+    color: #777;
+    line-height: 1.15em;
+    margin-bottom: var(--marginGrid);
+}
+
+#ourservices article>div i{
+    border: 1px solid var(--colorPrincipal);
+    color: var(--colorPrincipal);
+    font-size: 150%;
+    padding : 0.5em;
+}
+
+.enlace{
+    text-decoration: none;
+    color: var(--colorPrincipal);
+    font-weight: 700;
+} 
+
+.fa-truck{
+    transform: rotateY(180deg);
+}
+
+
+/* final Ourservices */
+
 
 /* mediaquerys */
 
@@ -84,5 +319,55 @@ header .nav_top a span{
       justify-content: space-between;
     }
 
+    #ourservices .grid{
+       grid-template-columns: repeat(2, 1fr);
+    }
+
+    #ourservices .grid article:last-child{
+        grid-column: 1/3;
+    }
+
+    section article{
+        padding: calc(var(--marginGrid)*2);
+        border-bottom: 0px;
+        border-left: 1px solid #aaa;
+    }
+
+
+
+}
+
+/* breakpoint 1004px */
+
+@media(min-width: 62.750em){
+    header nav .hamburguesa{
+        display: none;
+    }
+
+    header nav .menu{
+        float: right;
+        padding-top: 0;
+        clear: none;
+    }
+
+    header nav .menu li{
+        display: inline-block;
+    }
+
+    header nav .menu a{
+        border: 0px;
+        padding: 0.4em 0em 0.4em 2.5em;
+    }
+
+    #ourservices .grid{
+       grid-template-columns: repeat(3, 1fr)
+    }
+
+    #ourservices .grid article:last-child{
+        grid-column: 3/4;
+    }
+
+    /* pagina interesante de css grid 
+    https://css-tricks.com/snippets/css/complete-guide-grid/ */
 
 }
