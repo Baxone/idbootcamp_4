@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 javascript</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //Dados 54321 segundos quiero que calcules cuantas horas minutos y segundo hay en dicha cantidad de segundos. */
+        /* el ejercicio tiene que valer para la cantidad y funcionar para cualquier otra cantidad */
+
+        //debereis sacar el resultado por consola.
+
+        //15 horas 5 minutos 21 segundos
+
+        var segundosTotales = 54321;
+
+        var horas = 0;
+        var minutos = 0;
+        var segundos = 0;
+
+
+        horas = segundosTotales / (60 * 60)
+
+        horas = parseInt(horas); //15;
+
+        segundos = segundosTotales % (60 * 60)
+
+        minutos = segundos / 60;
+
+        minutos = parseInt(minutos); //5
+
+        segundos = segundos % 60;
+
+        console.log('En ' + segundosTotales + ' segundos hay ' + horas + ' horas ' + minutos + ' minutos y ' + segundos + ' segundos');
+
+
+
+    </script>
+
+</body>
+
+</html>

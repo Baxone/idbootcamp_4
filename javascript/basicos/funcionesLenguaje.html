@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones del lenguaje</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var usuario = 'Mario Girón';
+
+        var usuarioMayusculas = usuario.toUpperCase(); //mayusculas
+        var usuarioMinusculas = usuario.toLowerCase(); //minuscula
+
+
+        console.log('ORIGINAL', usuario);
+        console.log('Mayusculas', usuarioMayusculas);
+        console.log('Mayusculas', usuarioMinusculas);
+
+
+        //como pedir datos por pantalla
+
+        var edad = prompt('Dime tu edad');
+        console.log(typeof edad)
+
+
+        //existen funciones de conversion. parseInt() parseFloat() Number()
+
+        var numeroStr = "128.45";
+        var numero = "trece"
+
+        var numeroRacional = parseFloat(numeroStr)// 128.45
+        console.log(numeroRacional)
+
+        //equivalente:
+
+        var numeroRacional2 = Number(numeroStr) //128.45
+        var numeroEntero = Number('25') // 25
+        console.log(numeroRacional2, numeroEntero)
+
+        //parseInt coge una cadena u la convierte a entero quedandose con su parte entera.
+        var numeroEntero = parseInt(numeroStr) //128 
+
+        //sumar 
+
+        var numero1 = '123.45';
+        var numero2 = 12;
+
+        var resultado = parseFloat(numero1) + numero2; // 123.4512
+        console.log(resultado);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

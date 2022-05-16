@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+
+    <script>
+
+        // dados 76543 sacarme por pantalla la ultima unidad, ultima decena y ultima centena
+
+        /*
+           ej:  3
+               43
+               543
+
+       */
+
+        var numero = Number(prompt('Dame un numero'));
+
+        var ultimaUnidad = numero % 10;
+        //console.log(ultimaUnidad);
+        var ultimaDecena = numero % 100;
+        var ultimaCentena = numero % 1000;
+
+        console.log('el resultado es ', ultimaUnidad, ultimaDecena, ultimaCentena)
+
+
+        document.write('<h1>El resultado es ' + ultimaUnidad + ', ' + ultimaDecena + ', ' + ultimaCentena + '</h1>');
+
+        //template literal
+
+        document.write(`<h1>El resultado es ${ultimaCentena}, ${ultimaDecena} ,${ultimaUnidad}</h1>`);
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

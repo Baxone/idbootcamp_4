@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+
+<body>
+    <!-- comentario en html -->
+
+
+    <script>
+
+        //comentario de un linea
+
+        /*
+            comentario 
+            multilinea
+        */
+
+        //undefined - una vaiable coje valor undefined si no se asigna ningun dato.
+
+        // 1 - declaracion de una variable
+        var nombre;
+        console.log(nombre); // undefined
+        console.log(typeof nombre); //undefined
+        //string
+
+        //inicializacion o asignacion => lo que hay a la derecha se guarda en la izquierda.
+        nombre = "Juan"
+        console.log(nombre); //Juan
+
+        //typeof me dice el tipo de la variable
+        console.log(typeof nombre); //string
+
+        //inferencia de tipos - una variable obtiene un tipo despues de la asignacion
+
+        //error - hay que evitarlo. 
+        //nombre = 5;
+        //console.log(nombre)
+        //console.log(typeof nombre) //number
+
+        //string 
+        var direccion = "Gran via 69";
+        var ciudad = 'Madrid';
+        var contenidoHtml = '<h1 class="rojo">Un texto</h1>';
+
+        var character = 2 * '2';
+        console.log(character);
+
+        var apellido = 'Perez';
+        var nombreCompleto = nombre + " " + apellido;
+
+        console.log(nombreCompleto);
+
+        //numeros - todos los numeros entran en categoria.
+        var numeroEntero = 25;
+        var numeroRacional = 5.78;
+        var numerNegativo = -34.5;
+
+        //booleanos - logicos - true y false
+
+        var estado = true;
+        var activo = false;
+
+        // null 
+
+        var vehiculo = 'moto';
+        console.log(typeof vehiculo); //string
+
+        vehiculo = "";
+        console.log(typeof vehiculo); //string
+
+        vehiculo = null;
+        //ewstoy vaciando la variable de tipo y dato.
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

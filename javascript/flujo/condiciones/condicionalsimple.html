@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* sintaxis
+
+            if(condicion){
+                Sentencias a ejecutar si se cumple la condicion.
+            }
+
+        */
+
+        //quiero saber si la persona es mayor de edad
+        const edad = parseInt(prompt('dime tu edad'));
+        /*
+                if (edad >= 18) {
+                    console.log('Eres mayor de edad')
+                }
+                */
+
+        /*
+
+        if(condicion){
+            sentencias si es true
+        }else{
+            sentencias is es false
+        }
+        */
+
+        /* quiero saber si puede o no trabajar */
+
+        /*
+        if (edad >= 18 && edad <= 65) {
+            console.log('A cotizar')
+        } else {
+            console.log('no puedes cotizar')
+        }
+
+
+
+        */
+        if (edad >= 18 && edad <= 65) {
+            console.log('esta en edad laboral')
+        }
+
+        if (edad >= 0 && edad < 18 || edad > 65 && edad <= 100) {
+            console.log('no estas en edad laboral')
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

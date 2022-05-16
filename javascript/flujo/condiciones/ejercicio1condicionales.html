@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 </title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        //pedir por pantalla una edad (numerica) y genero (hombre y mujer).
+        //sacra por pantalla un mensaje de hol siempre y cuando es mayor de 18 años y sea mujer. Si no se cumple la condicion el programa no debera sacar ningun mensaje.
+
+
+
+        const EDAD_CORTE = 18;
+        const edad = parseInt(prompt('Dime tu edad'))
+        const genero = prompt('Dime tu genero, hombre o mujer').toLowerCase();
+
+        //opcion 1 erronea
+
+        if (edad >= EDAD_CORTE) {
+            if (genero === 'mujer') {
+                alert('Soy mujer mayor de 18 años')
+            }
+        }
+
+        //opcion 2 correcta
+
+        if (edad > EDAD_CORTE && genero === 'mujer') {
+            alert('Soy mujer mayor de 18 años')
+        } else {
+            alert('No cumples lo que necesito');
+        }
+
+
+    </script>
+
+</body>
+
+</html>
