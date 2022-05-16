@@ -152,7 +152,7 @@ footer a:hover{
 
 /* final footer */
 
-/* inicio de hero */
+/* #region inicio de hero */
 
 .hero{
     background-image: url(../images/fondo.jpg);
@@ -229,7 +229,7 @@ footer a:hover{
 
 /* inicio Ourservices */
 section{
-    padding: 2.5em 0 4em 0;
+    padding: 2.5em 0 4.5em 0;
 }
 
 section h2{
@@ -259,9 +259,6 @@ section .underline hr{
     border-color: var(--colorPrincipal);
 }
 
-
-
-
 #ourservices .grid{
     display: grid;
     gap: var(--marginGrid);
@@ -273,7 +270,7 @@ section article{
     border-bottom: 1px solid #aaa;
 }
 
-section article h3{
+section h3{
     font-weight: 700;
     margin: 0.5em 0;
     font-size: 110%;
@@ -303,7 +300,47 @@ section p{
 }
 
 
-/* final Ourservices */
+/*  #endregion  */
+
+/* inicio About us */
+
+section h4{
+    color: var(--colorPrincipal);
+    margin-bottom: 0.5em;
+}
+
+section .flex{
+    padding: 0 var(--marginGrid);
+}
+
+#aboutus figure{
+    width: 85%;
+    margin: 2em auto;
+}
+
+#aboutus figure .marco {
+    border: 3px solid var(--colorPrincipal);
+    transform: rotateZ(10deg);
+    transition: 1s;
+}
+
+#aboutus figure .marco img{
+    transform: rotateZ(-10deg);
+    transition: 1s;
+}
+
+#aboutus figure:hover :is(.marco, .marco img){
+    transform: rotateZ(0deg);
+}
+
+#aboutus .flex{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* end About us */
+
 
 
 /* mediaquerys */
@@ -331,6 +368,16 @@ section p{
         padding: calc(var(--marginGrid)*2);
         border-bottom: 0px;
         border-left: 1px solid #aaa;
+    }
+
+    #aboutus .flex{
+        flex-direction: row;
+        padding-top: var(--marginGrid);
+    }
+
+    #aboutus figure{
+        width: 90%;
+        margin: 0.5em auto;
     }
 
 
