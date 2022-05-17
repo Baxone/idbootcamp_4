@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambito funcional </title>
+</head>
+
+<body>
+
+    <script>
+
+        //variables puede ser global o local. Global su valor es accesible desde cualquier punto de mi programación. 
+        //local solo es accesible desde la estructura donde ha sido creada.
+        //ambito funcional solo compete a las funciones y lo tienes todos los lenguajes de programacion
+
+        var nombre = "Juan" //global
+        var estado = false //global
+
+        if (estado === true) {
+            var edad = 28; //global
+            console.log(nombre);
+        }
+
+        console.log(edad);
+
+        function saludar() {
+
+            console.log('Hola ' + nombre)
+            var apellido = 'Perez' //local
+
+        }
+
+
+
+        saludar();
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

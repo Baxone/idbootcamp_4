@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break y continue</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //break: para totalmente cualquier estructura de flujo, lo hemos usado en switch;
+
+        //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+        var inicial = 1;
+        var numeroAleatorio = Math.random() * 101; //70
+
+        /*
+        while (inicial <= numeroAleatorio) {
+            if (inicial === 51) {
+                break;
+            }
+            console.log(inicial);
+            inicial++;
+        }
+        */
+
+
+        //continue: lo que hace no es parar el bucle, saltarse una iteración y continuar con la siguiente.
+        //inicial = 1 numeroAleatorio = 6;
+        for (var i = inicial; i <= numeroAleatorio; i++) {
+            if (i % 2 !== 0) {
+                continue;
+            }
+            console.log(i);
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

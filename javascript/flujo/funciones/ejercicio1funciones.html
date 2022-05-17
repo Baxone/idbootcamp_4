@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+
+    <script>
+
+        //crear una funcion que me permite pintar n cuadrados de cualquier color y cualquier ancho
+
+        //pintar 10 cuadrados de 100x100 en color negro
+        //pintar 2 cuadrados de 300x300 en color tomato
+
+
+        function pintarCuadrados(pColor, pAncho, pNumeroCuadrados = 3) {
+            for (var i = 1; i <= pNumeroCuadrados; i++) {
+                document.write(`<div style="background-color: ${pColor
+                    }; width: ${pAncho}px; height: ${pAncho}px; margin: 10px;"></div>`)
+            }
+        }
+
+        pintarCuadrados('tomato', 300, 2)
+
+        pintarCuadrados('green', 500, 1)
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

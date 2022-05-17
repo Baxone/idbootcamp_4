@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial de un numero</title>
+</head>
+
+<body>
+
+    <script>
+
+        //necesito un programa que me calcule el factorial de un numero que me introducen por pantalla.
+        //  5 * 4 * 3 * 2 * 1 = 120;   
+
+
+        var numero = parseInt(prompt('Dime un numero'));
+        var resultado = 1; //undefined * 5 = NaN;
+
+        while (numero >= 1) {
+            resultado = resultado * numero //resultado *= numero;
+            numero--;
+        }
+
+        alert(resultado);
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

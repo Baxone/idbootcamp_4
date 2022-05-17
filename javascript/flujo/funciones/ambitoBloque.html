@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //let y const tienen el mismo ambito es decir de bloque.
+
+        //la variables con ambito de bloque se llaman let (en lugar de var con ambito funcional)
+
+        //el ambito de bloque es global siempre y cuando la varible se cree fuera de cualquier {}
+
+        var ciudad = 'Madrid' //global
+        let nombre = 'Pepe' //global
+        const PI = 3.14151617 //global
+
+        if (nombre === 'Juan') {
+            var edad = 23; //global
+            let apellido = 'Perez' //local
+            const GRAVEDAD = 9.8; //local
+        }
+
+        console.log(edad)
+        console.log(apellido)
+
+    </script>
+
+</body>
+
+</html>
