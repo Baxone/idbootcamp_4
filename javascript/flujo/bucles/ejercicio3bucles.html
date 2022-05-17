@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--  <div style="background-color: red; width: 100px; height: 100px; margin-left:0;"></div>
+    <div style="background-color: red; width: 100px; height: 100px; margin-left:100px;"></div>
+    <div style="background-color: red; width: 100px; height: 100px; margin-left:200px;"></div> -->
+
+    <script>
+
+        //pedir una cantidad de cuadrados y su ancho y situarlos en escalera.
+
+        // cada cuatro 4 invertir la escalera.
+
+        const numeroCuadrados = parseInt(prompt('Dime un numero de cuadrados'));
+        const ancho = parseInt(prompt('Dime un ancho en pixeles'));
+        var contador = 0;
+        var direccion = true // true es direccion positiva y false es direccion negativa
+
+        for (var i = 0; i < numeroCuadrados; i++) {
+
+            if (contador === 0) {
+                direccion = true;
+            } else if (contador === 4) {
+                direccion = false;
+            }
+
+            var cuadrado = `<div style="background-color: tomato; width: ${ancho}px; height: ${ancho}px; margin-left:${ancho * contador}px;"></div>`
+
+            document.write(cuadrado);
+
+            contador = (direccion === true) ? contador + 1 : contador - 1;
+
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
