@@ -15,11 +15,52 @@
 
     <script>
 
-       // document.write('<div style="background-color: red; width: 100px; height:100px"></div>')
-       
-       //quiero que me pidais por pantalla ancho, el alto y color de un poligono, puedo elegir entre cuadrado, rectangulo ,elipse y  circulo. Pintar el elemento por pantalla.
+        // document.write('<div style="background-color: red; width: 100px; height:100px"></div>')
 
-       //tengo que controlar que si pido un ancho en pixeles y meten por ejemple catorce me diga que es incorrecto.
+        //quiero que me pidais por pantalla ancho, el alto y color de un poligono, puedo elegir entre cuadrado, rectangulo ,elipse y  circulo. Pintar el elemento por pantalla.
+
+        //tengo que controlar que si pido un ancho en pixeles y meten por ejemplo catorce me diga que es incorrecto.
+
+        var ancho = '';
+        var alto = '';
+        var color = '';
+        var radio = '';
+        const poligono = prompt('Dime que poligono quieres, cuadrado, elipse ,circulo y rectangulo').toLowerCase()
+
+        switch (poligono) {
+
+            case 'circulo':
+            case 'cuadrado':
+                ancho = prompt('Dime el lado del poligono');
+                alto = ancho;
+                color = prompt('Dime un color');
+                break;
+
+            case 'elipse':
+            case 'rectangulo':
+                ancho = prompt('Dime el ancho del poligono')
+                alto = prompt('Dime el alto del poligono')
+                color = prompt('Dime el color')
+                break;
+
+            default:
+                alert('La opcion no es correcta');
+                break;
+        }
+        radio = (poligono === 'circulo' || poligono === 'elipse') ? '50' : '0';
+
+
+        if (isNaN(parseInt(ancho)) || isNaN(parseInt(alto))) {
+            alert('los parametros son incorrectos')
+        } else {
+            document.write(`<div style="background-color: ${color}; width: ${ancho}px; height:${alto}px; border-radius: ${radio}% "></div>`)
+        }
+
+
+
+
+
+
 
 
 

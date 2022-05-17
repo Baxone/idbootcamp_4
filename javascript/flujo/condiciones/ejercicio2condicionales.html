@@ -12,7 +12,54 @@
 
     <script>
 
-    //Voy a una discoteca y el portero me pregunta si soy mayor de edad y da acceso a la discoteca si cumplo la permitida. Tengo que tener en cuenta que edad corte puede cambiar por pais.
+        //Voy a una discoteca y el portero me pregunta si soy mayor de edad y da acceso a la discoteca si cumplo la permitida. Tengo que tener en cuenta que edad corte puede cambiar por pais.
+
+        const EDAD_CORTE = 18;
+        var edad = parseInt(prompt('Dime tu edad'));
+
+
+        if (isNaN(edad)) {
+            alert('La edad tiene que ser un numero');
+            edad = parseInt(prompt('Dime tu edad'));
+        }
+
+        if (edad < 0) {
+            alert('Le edad no puede ser negativa');
+            edad = parseInt(prompt('Dime tu edad'));
+
+        }
+
+        //opcion 1 condicional - matizar la opcion
+        let mensaje = "";
+        if (edad > 0 && edad < EDAD_CORTE) {
+            mensaje = '<h1>Un vasito de leche y la cama</h1>';
+        } else {
+            mensaje = '<h1>Bienvenido a Salvaje</h1>';
+        }
+
+        document.write(mensaje);
+
+        //opcion 2 - operador ternario
+
+
+        const notificacion = (edad > 0 && edad < EDAD_CORTE) ? '<h1>No puede pasar</h1>' : '<h1>Bienvenido</h1>';
+        document.write(notificacion)
+
+
+        //opcion 3 - condicional anidado.
+
+        let otromensaje = ""
+        if (edad > 0 && edad < EDAD_CORTE) {
+            otromensaje = '<h1>Jony a la camita</h1>';
+        } else if (edad >= EDAD_CORTE) {
+            otromensaje = '<h1>A disfrutar de tu cachimbita</h1>'
+        } else {
+            otromensaje = '<h1>Los parametros no son correctos</h1>'
+        }
+
+        document.write(otromensaje);
+
+
 
 
 
