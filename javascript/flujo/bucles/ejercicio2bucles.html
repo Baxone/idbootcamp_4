@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        //  Quiero pintar n cuadrados, siendo n un numero pedido por pantalla.
+
+        // cada cuadrado tendra dentro de si mismo un numero que corresponde a su posicion.
+
+        // quiero que los cuadrados con numero par sean verdes y los impares rojos.
+
+        //paso 1 pintar n cuadrados de un solo color.
+        //paso 2 meter dentro del cuadrado el numero.
+        //paso 3 cambiar el color.
+
+        const numeroCuadrados = parseInt(prompt('Dime un numero de cuadrados'));
+        var color = ""
+
+        for (var i = 1; i <= numeroCuadrados; i++) {
+
+            color = (i % 2 === 0) ? 'tomato' : 'gold';
+
+            document.write(`<div style="background-color: ${color}; width: 100px; height: 100px; margin: 10px">${i}</div>`)
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
