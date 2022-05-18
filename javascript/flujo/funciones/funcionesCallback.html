@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones de callback</title>
+</head>
+
+<body>
+
+    <script>
+
+        //una funcion de callback es un funcion que se pasa como parametro de otra.
+
+        //opcion 1 - paso el callback de la ejecución.
+
+        function saludar(pNombre) {
+            document.write(`<h1>Hola ${pNombre}</h1>`);
+        }
+
+        //saludar(prompt('Dime un nombre'));
+
+        function getUser() {
+            let nombre = "Juanita";
+            return nombre;
+        }
+
+        saludar(getUser())
+
+        //opcion 2 - paso el callback de la declaracion de la function
+
+        function calcular(pFnCallback) {
+            pFnCallback(3, 5);
+        }
+
+        calcular(function (pNumero1, pNumero2) {
+            return pNumero1 + pNumero2
+        })
+
+        calcular((pNumero1, pNumero2) => pNumero1 * pNumero2);
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de stockaje</title>
+</head>
+
+<body>
+
+    <script>
+
+        //necesito una aplicacion que me permita controlar el stock de mi tienda de paraguas negros. Para ello necesito saber:
+        //cuanto stock tengo
+        // necesito poder añadir paraguas a mi stock
+        // Que se pueden comprar paraguas.
+        // Que si tengo menos de 5 paraguas me avise de que tengo que comprar paraguas.
+
+        //Un elemento que me permita almacer cantidad de paraguas.
+        let stock = 125;
+
+        //necesito una funcion que me muestre por pantalla la cantidad de stock tengo.
+
+        const mostrarStock = () => console.log(`Tu stock es de ${stock}`);
+
+        //funcion que permite añadir stock a mi tienda, esta funcion me devolverá la cantidad de paraguas finales, despues de añadir stock.
+        //id a la consola llamar al funcion y pasarle los datos necesarios.
+
+        const addProduct = pCantidad => {
+            stock += pCantidad // stock = stock + pCantidad
+            mostrarStock();
+        }
+
+        //funcion que le permita a un usuario comprar n paraguas, puede comprar los paraguas que quiera siempre que tengamos stock.
+
+        const buyProduct = (pQuantity) => {
+            if (pQuantity > stock) {
+                return `No tengo suficiente stock, solo me puedes comprar ${stock}`
+            }
+            stock -= pQuantity;
+            stockCheck();
+        }
+
+        //necesito algo que me notifique cuando mi stock sea de 5 o menos 
+        //no solo hay que crear la accion si no saber donde se debe ejecutar.
+
+        const stockCheck = () => {
+            const STOCK_MINIMO = 5;
+            if (stock <= STOCK_MINIMO) {
+                console.log('Tienes 5 paraguas o menos, deberias comprar producto');
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

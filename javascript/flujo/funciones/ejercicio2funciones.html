@@ -20,9 +20,38 @@
         //margen de beneficio es solo sobre el precio de compra.
 
         //la aplicacion debe tener en cuenta que el IVA puede cambiar y el margen tambien
+        let precio = Number(prompt('Dime un precio'));
+        let impuesto = Number(prompt('Dime el impuesto que quieres, 4, 10 ,21'));
+        let porcentaje = Number(prompt('Dime el porcentaje de beneficio'));
+
+        function calcularPvp(pPrecioProveedor, pImpuesto, pPorcentajeBeneficio) {
+
+            const margenFinal = calcularMargen(pPrecioProveedor, pPorcentajeBeneficio);
+            const precioConMargen = pPrecioProveedor + margenFinal;
+
+            //calcular el impuesto.
+            const IVA = calcularIva(precioConMargen, pImpuesto);
+            const PVP = precioConMargen + IVA;
+
+            return PVP
+
+        }
+
+        let precioFinal = calcularPvp(precio, impuesto, porcentaje)
+        pintarPvp(precioFinal);
 
 
+        function calcularMargen(pPrecio, pMargen) {
+            return (pPrecio * pMargen) / 100;
+        }
 
+        function calcularIva(pPrecio, pImpuesto) {
+            return (pPrecio * pImpuesto) / 100;
+        }
+
+        function pintarPvp(pPrecioFinal) {
+            document.write(`<h1>El precio del producto es: ${pPrecioFinal}</h1>`)
+        }
 
     </script>
 
