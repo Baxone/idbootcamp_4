@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array simple</title>
+</head>
+
+<body>
+
+    <script>
+
+        //un array es un lista de elementos, estos elementos suelen ser del mismo tipo, pero los array pueden tener elementos de distinto.
+
+        //const listaAlumnos = []; //array vacio
+        //const listaAlumnos = new Array() //array vacio POO
+
+
+        //un array tiene longitud (length) y se numero de 0 a n-1 siendo n la longitud del array.
+
+
+        const listaAlumnosPresenciales = ['Raul', 'Jorge'];
+        const listaAlumnosOnline = new Array('Jony', 'Alex', 'Pedro', 'Dani', 'Lolo', 'Carlos', 'Jorge');
+
+        console.log(listaAlumnosPresenciales);
+
+        //longitud
+        console.log(listaAlumnosOnline.length); //6
+
+        //accedemos al valor de los elementos en determinada posicion, entre corchete ponemos el numero de la posicion del valor que queremos sacar.
+
+        console.log(listaAlumnosOnline[3]) //Lolo
+
+        //trabajar con array significa recorrerlo, para un recorrerlo necesito un bucle.
+        //3 bucles mas for i, while, do while, for of , for in , forEach
+
+        function pintarAlumnos(pListaAlumnos) {
+
+            let ul = '<ul>';
+
+            for (let i = 0; i < pListaAlumnos.length; i++) {
+                ul += `<li>${pListaAlumnos[i]}</li>`
+            }
+
+            ul += '</ul>';
+            document.write(ul)
+        }
+
+        pintarAlumnos(listaAlumnosOnline);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
