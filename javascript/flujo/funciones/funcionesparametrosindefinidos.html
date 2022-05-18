@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones de parametros indefinidos</title>
+</head>
+
+<body>
+
+    <script>
+
+        //funcion de parametros indefinidos tenemos dos premisas.
+        // 1 - son funciones que no reciben ningun parametro, la razon es, si es parametros indefinidos si recibe parametros ya estan definidos
+
+        function sumar() {
+            let suma = 0;
+
+            for (let i = 0; i < arguments.length; i++) {
+                suma = suma + arguments[i]
+            }
+            console.log(suma)
+        }
+
+        //una lista en programacion es un listado de elementos que se numeran de 0 a n-1 siendo n la longitud de la lista, la cantidad de items.
+
+        sumar(1, 2, 3, 4) //10
+        sumar(10, 10, 10, 10, 10, 10, 10) //70
+        sumar(1, 2, 3, 4, 5, 6, 7, 8, 9) //45
+
+
+    </script>
+
+
+
+</body>
+
+</html>
