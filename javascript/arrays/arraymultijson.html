@@ -8,9 +8,17 @@
     <title>Array multidimensional de json</title>
 </head>
 
-
-
 <body>
+
+    <!-- <article>
+        <h3>id - Nombre</h3>
+        <ul>
+            <li>Edad: 40</li>
+            <li>Nota: 10</li>
+        </ul>
+        <hr>
+    </article>
+    -->
 
     <script>
 
@@ -56,6 +64,47 @@
         for (let alumno of listaAlumnos) {
             console.log(alumno.nombre)
         }*/
+
+        function pintarTodosAlumnos(pListaAlumnos) {
+            for (let alumno of pListaAlumnos) {
+                pintarUnAlumno(alumno);
+            }
+        }
+
+        function pintarUnAlumno(pObject) {
+            document.write(`<article>
+                                <h3>${pObject.id} - ${pObject.nombre} </h3>
+                                <ul>
+                                    <li>Edad: ${pObject.edad} </li>
+                                    <li>Nota:${pObject.notamedia} </li>
+                                </ul>
+                                <hr>
+                            </article>`)
+        }
+
+
+        //pintarTodosAlumnos(listaAlumnos);
+
+        //pinteis solo los alumnos aprobados.
+
+        function filtrarPorNota(pListaAlumnos, pNotaMin, pNotaMax) {
+            const listaFiltrada = new Array();
+            let i = 0;
+
+            for (let alumno of pListaAlumnos) {
+                if (alumno.notamedia >= pNotaMin && alumno.notamedia <= pNotaMax) {
+                    listaFiltrada[i] = alumno
+                    i++;
+                }
+            }
+            return listaFiltrada;
+        }
+
+        let listaAprobados = filtrarPorNota(listaAlumnos, 0, 4.99) //aprobados
+        pintarTodosAlumnos(listaAprobados)
+
+
+
 
 
 
