@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<body>
+
+    <script>
+        //JSON significa JavaScript Object Notation. Un objeto que guarda datos de diferentes tipologias. Array asociativo, eliminado el concepto de posicion para hablar de clave: valor
+
+        //const producto = new Object() //POO - objeto vacio
+
+        //const producto = {} //Funcional  - Objeto vacio
+
+        const producto = {
+            titulo: 'Leche desnatada',
+            precio: 0.50,
+            cantidad: 10,
+            capacidad: 1.5,
+            stock: true
+        }
+
+        console.log(producto);
+
+        //opcion 1: nomenclatura de corchete (es la que usamos en arrays), es la menos usada pero la mas versatil.
+
+        console.log(producto['titulo']) //leche desnatada
+
+        const cosa = new Object();
+        cosa['precio'] = 2;
+        console.log(cosa);
+
+        //opcion 2: nomenclatura de punto (es la mas usada  POO), pero la menos versatil
+
+        console.log(producto.capacidad) // 1.5
+
+        //let clave = prompt('Dime que dato quieres');
+        // console.log(producto.clave) ERROR
+        //console.log(producto[clave]) //me devolverá el resultado con la clave introducida
+
+
+        //recorre un objeto JSON. FOR IN para recorrer objetos
+
+        for (let clave in producto) {
+            document.write(`<p>${clave} :  ${producto[clave]}</p>`)
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

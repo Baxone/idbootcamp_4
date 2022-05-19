@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Avanzado</title>
+</head>
+
+<body>
+
+    <script>
+
+        const alumno = {
+            nombre: 'Juan Antonio',
+            apellidos: 'Perez',
+            edad: 40,
+            genero: 'masculino',
+            matricula: 'A1234567',
+            estado: false,
+            asignaturas: ['matematicas', 'fisica', 'quimica'],
+            notas: [3, 7, 5],
+            datos: {
+                direccion: 'Calle Martines Pollatos',
+                puerta: 5,
+                piso: 3,
+                cp: {
+                    ciudad: 'Madrid',
+                    codigo: '28013'
+                }
+            },
+            mostrarNotaMedia: function () {
+                let suma = 0;
+                for (let nota of this.notas) {
+                    suma += nota;
+                }
+                return suma / this.notas.length;
+
+            }
+        }
+
+        //direccion - nomenclatura de corchetes.
+
+        console.log(alumno['nombre']) //Juan Antonio
+        console.log(alumno['asignaturas'][1]) //Fisica
+        console.log(alumno['datos']['cp']['ciudad']) //Madrid
+
+        // nomenclatura de punto
+
+        console.log(alumno['datos'].cp.ciudad)
+
+        console.log(alumno.nombre) //Juan Antonio
+        console.log(alumno.asignaturas[1]) //fisica
+        console.log(alumno.datos.cp.ciudad)// Madrid
+
+        console.log(alumno.mostrarNotaMedia())
+
+    </script>
+
+</body>
+
+</html>

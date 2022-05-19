@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array multidimensionales</title>
+</head>
+
+<body>
+
+    <script>
+
+        //array multidimensional es un array de arrays. 
+
+        const aves = new Array('Aguila', 'Guacamayo', 'Periquito');
+        const felinos = new Array('León', 'Tigre', 'Pantera', 'Leopardo');
+        const anfibios = new Array('Rana', 'Cocodrilo', 'Hipopotamo');
+
+        const zoo = new Array(aves, anfibios, felinos);
+        //console.log(zoo);
+
+        //pantera por consola.
+
+        //console.log(zoo[2][2])//pantera
+
+        //hipopotamo
+        //console.log(zoo[1][2])//hipopotamo
+
+        for (let i = 0; i < zoo.length; i++) {
+            for (let j = 0; j < zoo[i].length; j++) {
+                console.log(zoo[i][j])
+            }
+        }
+
+        console.log('-------');
+
+        //for of
+
+        for (let especie of zoo) {
+            for (let animal of especie) {
+                console.log(animal)
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
