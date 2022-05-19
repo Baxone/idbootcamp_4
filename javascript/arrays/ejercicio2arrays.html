@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const listaNombres = new Array('Ana', 'Natalia', 'Pepe', 'Juan', 'Antonio', 'Alejandro', 'Almudena');
+
+        //quiero que me pinteis por pantalla aquellos nombre que comienza por a. Pensad que tiene que valer para cualquier letra.
+
+        const texto = 'Solo se que no se nada';
+        console.log(texto[0]);
+
+        function pintarNombres(pListaNombres) {
+            let div = '<div>';
+
+            for (let nombre of pListaNombres) {
+                div += `<p>${nombre}</p>`
+            }
+
+            div += '</div>'
+            document.write(div)
+        }
+
+        function filtrarPorLetra(pListaNombres, pLetra) {
+            const listaFiltrada = new Array();
+            let i = 0;
+            for (let nombre of pListaNombres) {
+                if (nombre[0].toLowerCase() === pLetra.toLowerCase()) {
+                    listaFiltrada[i] = nombre
+                    i++;
+                }
+            }
+            return listaFiltrada;
+        }
+
+        // let letra = prompt('Dime una letra');
+        //callback
+        //pintarNombres(filtrarPorLetra(listaNombres, letra))
+
+        let listaNombrePorA = filtrarPorLetra(listaNombres, 'A');
+        pintarNombres(listaNombrePorA)
+        document.write('....')
+        let listaNombresPorP = filtrarPorLetra(listaNombres, 'P');
+        pintarNombres(listaNombresPorP)
+
+
+    </script>
+
+</body>
+
+</html>

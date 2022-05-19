@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+
+    <script>
+
+        const valores = new Array(true, 5, false, 'hola', 'adios', 2, 3);
+
+        // 1 . Determinar cual de los elementos de texto es mas largo.
+        // 2 . Realizar la suma y multiplicacion de los elementos numericos.
+
+        // 4 funciones.
+        //sumar, multiplicar, textoMasLargo, filtrarPorTipo
+
+
+        //typeof me dice el tipo de una variable
+        //filtrarPorTipo(valores, 'number')
+        function filtrarPorTipo(pArray, pTipo) {
+            const listaFiltrada = new Array();
+
+            let i = 0;
+            for (let valor of pArray) {
+                if (typeof valor === pTipo) {
+                    listaFiltrada[i] = valor
+                    i++;
+                }
+            }
+
+            return listaFiltrada;
+        }
+
+        //console.log(filtrarPorTipo(valores, 'number'))
+
+
+        function sumar(pListaNumeros) {
+            let suma = 0; //acumuludor
+            for (let numero of pListaNumeros) {
+                suma = suma + numero // suma += numero
+            }
+            return suma;
+        }
+
+        //console.log(sumar(filtrarPorTipo(valores, 'number')))
+        //let numeros = filtrarPorTipo(valores, 'number');
+        //console.log(sumar(numeros));
+
+        function multiplicar(pListaNumeros) {
+            let resultado = 1; //acumuludor
+            for (let numero of pListaNumeros) {
+                resultado = resultado * numero // suma += numero
+            }
+            return resultado;
+        }
+
+        let numeros = filtrarPorTipo(valores, 'number');
+        console.log(multiplicar(numeros));
+
+
+        function dameElMasLargo(pArrayString) {
+
+            let elementoMasLargo = "";
+
+            for (let string of pArrayString) {
+                if (string.length > elementoMasLargo.length) {
+                    elementoMasLargo = string;
+                }
+            }
+
+            return elementoMasLargo
+        }
+
+        let strings = filtrarPorTipo(valores, 'string');
+        console.log(dameElMasLargo(strings))
+
+
+
+    </script>
+
+</body>
+
+</html>

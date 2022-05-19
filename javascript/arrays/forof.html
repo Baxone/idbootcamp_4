@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //for of sirve para manejar cualquier tipo de array.
+
+        const animales = new Array('León', 'Gato', 'Perro', 'Periquito', 'Ratón');
+
+        /*
+        for (let i = 0; i < animales.length; i++) {
+            animales[i] = 'Juan';
+        }
+        */
+
+        /* 
+            let i = 0;
+            for (let animal of animales) {
+                console.log(animal);
+                animales[i] = 'Juan';
+                i++
+            }
+        */
+
+        for (let animal of animales) {
+            console.log(animal);
+        }
+
+        console.log(animales)
+
+
+    </script>
+
+</body>
+
+</html>

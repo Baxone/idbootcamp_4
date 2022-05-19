@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 arrays</title>
+</head>
+
+<body>
+
+    <script>
+
+        // crear una array de numeros vacio
+
+        const numeros = new Array();
+
+        // como llenariamos este array de 10 numeros aleatorios entre 1 y 100. Los numeros tienen que ser enteros. 
+
+        for (let i = 0; i < 10; i++) {
+            numeros[i] = parseInt(Math.random() * 101)
+        }
+
+        console.log(numeros);
+
+        //pintar en un lista no numerada solo los numeros divisibles por tres.
+
+        function pintarNumeros(pListaNumeros) {
+            let ul = '<ul>';
+
+            for (let numero of pListaNumeros) {
+                if (numero % 3 === 0) {
+                    ul += `<li>${numero}</li>`;
+                }
+            }
+
+            ul += '</ul>'
+            document.write(ul)
+        }
+
+        pintarNumeros(numeros);
+
+
+    </script>
+
+</body>
+
+</html>
