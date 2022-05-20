@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //DADO ESTE ARRAY MULTIDIMENSIONAL DE JSON QUIERO QUE ME DEVOLVAIS UN ARRAY SIMPLE CON LOS NOMBRE DE LOS ALUMNOS.
+
+        //Sacar por pantalla el nombre mas largo.
+
+
+        const listaAlumnos = new Array(
+            {
+                nombre: 'Juan',
+                edad: 40
+            },
+            {
+                nombre: 'Pepe',
+                edad: 56
+            },
+            {
+                nombre: 'Rocio',
+                edad: 37
+            },
+            {
+                nombre: 'Samuel',
+                edad: 24
+            },
+        )
+
+        //opcion 1 junior
+        const listaNombres = new Array();
+        for (let alumno of listaAlumnos) {
+            listaNombres.push(alumno.nombre)
+        }
+        console.log(listaNombres)
+
+        //opcion 2 medium
+
+        const listaNombres2 = new Array();
+        listaAlumnos.forEach(alumno => listaNombres2.push(alumno.nombre));
+        console.log(listaNombres2);
+
+        //opcion 3 Joaquin PRO.
+
+        const listaNombres3 = listaAlumnos.map(alumno => alumno.nombre);
+        console.log(listaNombres3)
+
+
+    </script>
+</body>
+
+</html>
