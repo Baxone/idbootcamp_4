@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find</title>
+</head>
+
+<body>
+
+    <script>
+
+        //Find funciona tanto en arrys simple como en multidimensionales. Hace una busqueda en funcion de una condicion y devuelve on objeto JSON. El primero que cumpla dicha condicion.
+
+        const listaAlumnos = new Array(
+            {
+                nombre: 'Juan',
+                edad: 40
+            },
+            {
+                nombre: 'Pepe',
+                edad: 56
+            },
+            {
+                nombre: 'Rocio',
+                edad: 37
+            },
+            {
+                nombre: 'Samuel',
+                edad: 24
+            },
+        )
+
+        //el un estudiante que tenga más de 45 años.
+        //paso 1
+        /*
+        function findByAge(pLista, pEdadMin, pEdadMax) {
+
+            const alumnoEncontrado = pLista.find(function (alumno) {
+                return alumno.edad > pEdadMin && alumno.edad < pEdadMax
+            })
+
+            console.log(alumnoEncontrado);
+        }
+
+        findByAge(listaAlumnos, 40, 60)
+        */
+
+
+        //paso 2
+        /*
+          function findByAge(pLista, pEdadMin, pEdadMax) {
+  
+              const alumnoEncontrado = pLista.find(alumno => alumno.edad > pEdadMin && alumno.edad < pEdadMax)
+  
+             return alumnoEncontrado;
+          }
+  
+          console.log(findByAge(listaAlumnos, 40, 60))
+          */
+
+
+        //paso 3
+        const findByAge = (pLista, pEdadMin, pEdadMax) => pLista.find(alumno => alumno.edad > pEdadMin && alumno.edad < pEdadMax);
+
+        let listaAlumnos4060 = findByAge(listaAlumnos, 40, 60)
+        console.log(listaAlumnos4060)
+
+    </script>
+
+</body>
+
+</html>

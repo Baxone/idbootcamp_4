@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter - busca varios elementos que cumplan una condicion</title>
+</head>
+
+<body>
+
+    <script>
+        //filter es un metodo que me permite buscar más de item dentro de una lista que cumpla la funcion de condicion. filter devuelve un array siempre. 
+
+        const listaAlumnos = new Array(
+            {
+                nombre: 'Juan',
+                edad: 40
+            },
+            {
+                nombre: 'Pepe',
+                edad: 56
+            },
+            {
+                nombre: 'Rocio',
+                edad: 37
+            },
+            {
+                nombre: 'Samuel',
+                edad: 24
+            },
+        )
+
+
+        //dame todos los alumnos que tengo menos de 40 años.
+        //opcion 1
+        /*
+        function filterByAge(pLista, pEdadMin, pEdadMax) {
+            const alumnosBuscados = pLista.filter(function (alumno) {
+                return alumno.edad >= pEdadMin && alumno.edad <= pEdadMax
+            })
+            return alumnosBuscados
+        }
+
+        console.log(filterByAge(listaAlumnos, 20, 40))
+        */
+
+        //opcion 2
+        /*
+        function filterByAge(pLista, pEdadMin, pEdadMax) {
+            const alumnosBuscados = pLista.filter(alumno => alumno.edad >= pEdadMin && alumno.edad <= pEdadMax)
+            return alumnosBuscados
+        }
+
+        console.log(filterByAge(listaAlumnos, 20, 40))
+        */
+
+        const filterByAge = (pLista, pEdadMin, pEdadMax) => pLista.filter(alumno => alumno.edad >= pEdadMin && alumno.edad <= pEdadMax);
+
+        console.log(filterByAge(listaAlumnos, 20, 40))
+
+    </script>
+
+</body>
+
+</html>

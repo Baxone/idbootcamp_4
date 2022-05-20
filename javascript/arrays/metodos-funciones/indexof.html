@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexOF</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //indexof busca un elemento dentro de un array y si lo encuentra devuelve su posicion y si no lo encuentra devuelve -1
+
+        const listaAnimales = new Array('perro', 'gato', 'periquito', 'hipopotamo', 'aguila');
+
+        let busqueda = 'Periquito'
+
+        let posicion = listaAnimales.indexOf(busqueda.toLowerCase());
+
+        console.log(posicion)
+
+        console.log(listaAnimales[posicion])
+
+        //no sirve para arrays multidimensionales
+
+        const listaAlumnos = new Array(
+            {
+                nombre: 'Juan',
+                edad: 40
+            },
+            {
+                nombre: 'Pepe',
+                edad: 56
+            },
+            {
+                nombre: 'Rocio',
+                edad: 37
+            },
+            {
+                nombre: 'Samuel',
+                edad: 24
+            },
+        )
+
+        let nombreBuscar = 'pepe';
+
+        //findIndex funciona exactamente igual que indexOf me devuelve la posicion del objeto y si no lo encuentra -1.
+
+        // Tendremos que trabajar con el concepto de funcion de condicion. Callback que interpone una condicion.
+
+        //callback funcion anonima
+        /* let posicionBusqueda = listaAlumnos.findIndex(function (alumno) {
+            return alumno.nombre.toLowerCase() === nombreBuscar.toLowerCase()
+        }) */
+
+        /*  funcion flecha callback */
+
+        let posicionBusqueda = listaAlumnos.findIndex(alumno => alumno.nombre.toLowerCase() === nombreBuscar.toLowerCase());
+
+
+        console.log(posicionBusqueda)
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

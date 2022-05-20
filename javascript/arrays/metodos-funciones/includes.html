@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //includes encuentra una cadena dentro de un array
+        //aplicado array simples
+
+        const animales = new Array('perro', 'gato', 'loro', 'tigre', 'elefante');
+
+        let busqueda = 'Gato';
+
+        let resultado = animales.includes(busqueda.toLowerCase());
+
+        console.log(resultado);
+
+
+        //array multidimensionales, buscador semantico
+
+        const listaAlumnos = new Array(
+            {
+                nombre: 'Juan',
+                edad: 40
+            },
+            {
+                nombre: 'Pepe',
+                edad: 56
+            },
+            {
+                nombre: 'Rocio',
+                edad: 37
+            },
+            {
+                nombre: 'Samuel',
+                edad: 24
+            },
+            {
+                nombre: 'Pablo',
+                edad: 20
+            },
+        )
+
+        //quiero encontra alumnos que contenga la e dentro del nombre, que empiecen por p y terminen por l:
+
+        let letra = 'e'
+
+        const listaFiltrada = listaAlumnos.filter(alumno => {
+            //incluya la palabra en cualquier parte del texto
+            //return alumno.nombre.toLowerCase().includes(letra.toLowerCase())
+
+            //incluya la palabra al principio del texto
+            // return alumno.nombre.toLowerCase().startsWith(letra.toLowerCase())
+
+            //incluya la palabra al final del texto
+            return alumno.nombre.toLowerCase().endsWith(letra.toLowerCase())
+        })
+        console.log(listaFiltrada)
+
+
+    </script>
+
+</body>
+
+</html>

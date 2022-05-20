@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+
+    <script>
+        //map crear un array en base a otro de origen. El mapeo se producto aplicando una serie de reglas al array original sin modificarlo.
+
+        const listaNumeros = new Array(1, 2, 3, 4, 5, 6, 7, 8);
+
+        const dobles = listaNumeros.map(function (numero) {
+            return numero * 2
+        })
+        //const dobles = listaNumeros.map(numero => numero * 2)
+
+        console.log(dobles)
+        console.log(listaNumeros)
+
+
+        console.log('-------')
+
+
+        const listaNombres = new Array('Juan', 'Luis', 'Pepe', 'Joaquin');
+
+        const listaNombreMinuscula = listaNombres.map((nombre, index) => index + " - " + nombre.toLowerCase())
+
+
+        console.log(listaNombreMinuscula)
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unshift</title>
+</head>
+
+<body>
+
+    <script>
+        //introduce elementos dentro de un array por el principio. Recalculando las posiciones del array.
+        //al igual push me devuelve la nueva longitud
+
+        const listaAnimales = new Array('Perro', 'Gato', 'Periquito');
+
+        let animal = 'Pulpo';
+
+        let longitud = listaAnimales.unshift(animal)
+
+        console.log(listaAnimales);
+        console.log(longitud);
+
+
+    </script>
+
+</body>
+
+</html>
