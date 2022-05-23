@@ -1,0 +1,50 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor  article{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.contenedor article ul{
+    list-style: none;
+}
+
+.contenedor article h3{
+    text-align: center;
+    background-color: lightgray;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.contenedor article .diagnostico{
+    background-color: tomato;
+    padding: 5px;  
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media(min-width: 768px){
+    .contenedor  article{
+      width:calc(33.333% - 20px);
+    }
+}
+
