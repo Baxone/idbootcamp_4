@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+
+    <header>
+        <ul>
+
+        </ul>
+    </header>
+
+
+    <footer>
+        <ul>
+
+        </ul>
+    </footer>
+
+
+    <script>
+
+        const menuPrincipal = new Array('Home', 'Servicios', 'Contacto')
+
+        const menuLegal = new Array('Privacidad', 'Cookies');
+
+        //pintar cada listado dentro de su zona correspondiente. hay que pintar cada li con su enlace.
+        //menuprincial dentro de header
+        //legal dentro del footer.
+
+        //capturar los elementos que vais a rellenar.
+
+        //opcion 1 capturar todos los ul
+        const uls = document.getElementsByTagName('ul');
+        const menu = uls[0];
+        //const legal = uls[1];
+        //console.log(menu);
+
+        //opcion 2 
+        //const header = document.getElementsByTagName('header');
+        const footer = document.getElementsByTagName('footer')[0];
+        const legal = footer.getElementsByTagName('ul')[0];
+        console.log(legal);
+        //const menu = header.getElementsByTagName('ul');
+
+        //lenar dicho elementos con los arrays creando los li que hay dentro de cada ul, en funcion de mi array correspodiente.
+
+        function pintarMenu(pLista, pObjectDom) {
+            for (let seccion of pLista) {
+                pObjectDom.innerHTML += `<li>
+                                <a href="${seccion.toLowerCase()}.html">
+                                    ${seccion}
+                                </a>
+                            </li>`;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

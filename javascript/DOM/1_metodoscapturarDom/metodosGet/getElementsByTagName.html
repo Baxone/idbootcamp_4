@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName</title>
+</head>
+
+<body>
+
+    <p class="juan"><strong>Juan</strong></p>
+    <p>Pepe</p>
+    <p>Carlos</p>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, quibusdam! Animi ducimus veritatis rerum nisi, sapiente vitae debitis iure odio obcaecati adipisci, sunt voluptatum vel voluptate architecto recusandae, vero pariatur.</p>
+    </div>
+
+    <section>
+        <article>
+            <p>Hola</p>
+        </article>
+    </section>
+
+    <p>adios</p>
+    <script>
+
+        const parrafos = document.getElementsByTagName('p');
+        console.log(parrafos); //htmlColletion
+
+        console.log(parrafos[0]) //el primer parrafo por posicion.
+
+        //ERROR no se le aplicar a un array innerHTML
+        //parrafos.innerHTML = "ihaosdf";
+
+        //como modificion el contenido de un elemento del DOM
+
+        //inneText modifica o lee solo texto
+        parrafos[0].innerText = 'Hola k ase';
+        //innerHTML modifica y lee estructuras HTML
+        parrafos[1].innerHTML = '<strong>PEPE</strong>'
+
+
+
+    </script>
+
+</body>
+
+</html>
