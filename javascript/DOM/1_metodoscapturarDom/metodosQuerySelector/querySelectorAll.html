@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector All</title>
+</head>
+
+<body>
+
+    <ul class="menu">
+        <li><a href="">Item 1</a></li>
+        <li><a href="">Item 2</a></li>
+        <li><a href="">Item 3</a></li>
+    </ul>
+
+    <script>
+
+        //querySelectAll me permite capturar en listado todos los elementos que cumplen la condicion css. 
+
+        //la diferencia notable entre metodos get y querySelectorAll es que los metodos no HTMLColletion y querySelector son NodeList.
+
+        //NodeList es un array nodos que tiene implementados algunos de arrays, por ejemplo forEach
+
+        //opcion metodo get
+        const menuGet = document.getElementsByClassName('menu')[0];
+        const enlacesGet = menuGet.getElementsByTagName('a');
+
+
+        for (let enlace of enlacesGet) {
+            enlace.innerText = 'Juan';
+        }
+
+        //opcion querySelectorALL
+        const enlacesQuery = document.querySelectorAll('.menu a');
+
+        enlacesQuery.forEach(enlace => enlace.innerText = 'texto cambiado');
+
+    </script>
+
+
+</body>
+
+</html>
