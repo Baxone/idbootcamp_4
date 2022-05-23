@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get element by id</title>
+</head>
+
+<body>
+
+    <section id="about">
+        <h2>About us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ratione, mollitia, aut laudantium alias labore eius nesciunt quibusdam error et aliquam adipisci deserunt pariatur quos, quae ea dolore ut explicabo. </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut odio dolor reiciendis soluta impedit ex amet eum cumque inventore repudiandae nesciunt, nam nisi quam, cupiditate illum blanditiis porro distinctio eligendi!</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ratione, mollitia, aut laudantium alias labore eius nesciunt quibusdam error et aliquam adipisci deserunt pariatur quos, quae ea dolore ut explicabo. </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut odio dolor reiciendis soluta impedit ex amet eum cumque inventore repudiandae nesciunt, nam nisi quam, cupiditate illum blanditiis porro distinctio eligendi!</p>
+    </section>
+
+    <script>
+
+        //quiero modificar los parrafos de solo la servicios.
+
+        const services = document.getElementById('services');
+        console.log(services)
+        const parrafosServices = services.getElementsByTagName('p');
+
+
+        for (let parrafo of parrafosServices) {
+            parrafo.innerText = "texto modificado";
+        }
+
+    </script>
+
+</body>
+
+</html>
