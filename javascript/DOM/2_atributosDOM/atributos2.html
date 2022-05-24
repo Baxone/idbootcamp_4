@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <img src="images/imagen1.jpg">
+    </figure>
+
+    <script>
+        // Capturamos la imagen
+        const imagen = document.querySelector('figure img');
+
+        // Crear un método que reciba el número de la imagen y modifique el valor del src
+        function changeImage(pNumImage) {
+            imagen.src = `images/imagen${pNumImage}.jpg`;
+        }
+
+        // setTimeout -> ejecuta una función cuando pase un tiempo específico. Primer parámetro es la función. Segundo, el tiempo de espera (milisegundos)
+        // setTimeout(() => {
+        //     console.log('Se ejecuta en 3 segundos');
+        // }, 3000);
+
+        // setInterval -> ejecuta una función cada X tiempo. Recibe dos parámetros: la función a ejecutar y el tiempo
+        // setInterval(() => {
+        //     console.log('Ejecuta la función!!')
+        // }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>

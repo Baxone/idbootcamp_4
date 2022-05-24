@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="menu">
+        <li><a href="http://google.es">Google.es</a></li>
+        <li><a href="http://yahoo.es">Yahoo.es</a></li>
+        <li><a href="http://20minutos.es">20Minutos</a></li>
+    </ul>
+
+    <script>
+
+        const enlaces = document.querySelectorAll('#menu a');
+
+        for (let enlace of enlaces) {
+            enlace.href = 'http://marca.com';
+            enlace.target = '_blank';
+            enlace.title = 'Marca.com deportes y stream de Ibai';
+        }
+
+    </script>
+</body>
+
+</html>
