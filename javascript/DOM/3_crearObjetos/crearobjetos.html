@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear objetos del dom</title>
+</head>
+
+<body>
+
+    <section id="frases">
+        <!-- 
+        <article>
+            <h3>Solo se que no se nada</h3>
+            <p>Autor: Descartes</p>
+            <hr>
+        </article>
+        -->
+    </section>
+
+    <script>
+
+        const frases = new Array(
+            {
+                id: 1,
+                frase: 'Solo se que no se nada',
+                autor: 'Descartes'
+            },
+            {
+                id: 2,
+                frase: 'Yo no perteneciría a ningun club que admitiera como socio',
+                autor: 'Marx'
+            },
+            {
+                id: 3,
+                frase: 'Eres un fristo pecadorr de la pradera',
+                autor: 'Chiquito de la calzada'
+            }
+        )
+
+        //capturamos aquellos elementos con los que vamos a interactuar.
+        const sectionFrases = document.querySelector('#frases');
+
+        //pintar las frase, es lo de siempre recorrer el listado y pintar frase a frase
+
+        function pintarFrases(pListaFrase, pDom) {
+            pListaFrase.forEach(frase => pintarUnaFrase(frase, pDom))
+        }
+
+
+        function pintarUnaFrase(pObjFrase, pDom) {
+            //crear los nodos de etiquetas - etiquetas html
+            let article = document.createElement('article') //<article></article>
+            let p = document.createElement('p') // <p></p>
+            let h3 = document.createElement('h3') // <h3></h3>
+            let hr = document.createElement('hr') // <hr>
+
+            article.id = 'frase_' + pObjFrase.id
+            article.style.backgroundColor = 'tomato';
+            article.style.padding = '5px';
+            // article.setAttribute('id', pObjFrase.id)
+            //contenido
+
+            let contentH3 = document.createTextNode(pObjFrase.frase) // solo se que no se nada
+            let contentP = document.createTextNode(`Autor: ${pObjFrase.autor}`); // Autor: Descartes
+
+
+            h3.appendChild(contentH3); //<h3>Solo se que no se nada</h3>
+            p.appendChild(contentP); // <p>Autor: Descartes</p>
+
+            article.appendChild(h3);
+            article.appendChild(p);
+            article.appendChild(hr);
+            /* <article>
+                <h3>Solo se que no se nada</h3>
+                <p>Autor: Descartes</p>
+                <hr>
+            </article> */
+
+            pDom.appendChild(article);
+
+
+        }
+
+        pintarFrases(frases, sectionFrases)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
