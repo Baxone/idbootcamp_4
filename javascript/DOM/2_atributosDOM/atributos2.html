@@ -18,6 +18,13 @@
             width: 100%;
             height: auto;
         }
+
+        figure {
+            width: 500px;
+            margin: 40px auto;
+            padding: 10px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 
@@ -41,10 +48,20 @@
         // }, 3000);
 
         // setInterval -> ejecuta una función cada X tiempo. Recibe dos parámetros: la función a ejecutar y el tiempo
-        // setInterval(() => {
-        //     console.log('Ejecuta la función!!')
-        // }, 1000);
+        /*const intervalo = setInterval(() => {
+             console.log('Ejecuta la función!!')
+         }, 1000);
+         */
+        let numeroImagen = 1;
+        const intervalo = setInterval(() => {
+            numeroImagen = (numeroImagen < 3) ? numeroImagen + 1 : 1;
+            changeImage(numeroImagen);
 
+        }, 1000)
+
+        function pararCarrusel() {
+            clearInterval(intervalo);
+        }
 
 
     </script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion del Dom</title>
+</head>
+
+<body>
+
+    <!-- (p>lorem10)*10 -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, facere?</p>
+    <p>Nostrum mollitia quod adipisci fugit doloribus iste, saepe commodi at?</p>
+    <p>Quisquam cum ea eum quas asperiores? Rerum eligendi distinctio sequi!</p>
+    <p>Neque impedit quae voluptatem a voluptatum minima doloribus, sapiente odio?</p>
+    <p>Excepturi fugiat exercitationem quae ratione debitis eveniet quos, iste dolore.</p>
+    <p>Velit architecto ipsa voluptatem, aliquam ad qui quis ullam nostrum!</p>
+    <p>Cupiditate delectus deleniti, nemo maxime architecto optio dolores ad veniam.</p>
+    <p>Natus doloremque, perferendis animi ipsum deleniti labore vel rerum mollitia!</p>
+    <p>Nesciunt dolorem provident rem porro unde aliquam praesentium tempore blanditiis.</p>
+    <p>Natus possimus id amet reiciendis tempore magni neque similique alias.</p>
+
+    <script>
+        //quiero que los parrafos que hay pantalla los elementos pares tengan fondo negro y texto blanco y los impares solo texto negro. Ambos tendrán un padding de 10px por todos los lados.
+
+        //capturamos los parrafos
+        const parrafos = document.querySelectorAll('p');
+
+        //un lista de elementos de dom. Array de parrafos.
+        function cambiarEstiloParrafos() {
+            let contador = 0;
+            for (let parrafo of parrafos) {
+                if (contador % 2 == 0) {
+                    parrafo.style.backgroundColor = 'black';
+                    parrafo.style.color = 'white';
+                }
+                parrafo.style.padding = '10px';
+                contador++;
+            }
+        }
+
+
+        cambiarEstiloParrafos()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

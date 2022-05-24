@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#galeria article{
+    background-size: cover;
+    background-position: center;
+    font-size: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#galeria article h2{
+    background-color: rgba(255,255,255,0.7);
+    padding: 20px;
+}
