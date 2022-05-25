@@ -6,20 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solo por listeners</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: black;
+            transition: 1s;
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class="cuadrado"></div>
+
 
     <script>
 
+        const cuadrado = document.querySelector('.cuadrado');
+
         //quiero dibujar un cuadrado por css 100px alto y ancho en color negro.
         //cuando hagamos mouseover, cuando nos pongamos encima cambiara el color a rojo.
+        cuadrado.addEventListener('mouseover', hacerMouseOver);
+
+        function hacerMouseOver(event) {
+            event.target.style.backgroundColor = "tomato";
+        }
+
         //cuando hagmos mouseout volverá a negro.
+
+        cuadrado.addEventListener('mouseout', event => event.target.style.backgroundColor = 'black')
+
+
         //cuando hagamos click sobre el cuadrado lo convertira en circulo.
+        cuadrado.addEventListener('click', hacerClick);
+
+        function hacerClick(event) {
+            console.log(event.target.style.borderRadius)
+            if (event.target.style.borderRadius !== '50%') {
+                event.target.style.borderRadius = '50%';
+            }
+        }
 
         //cuando hagamos dobleclick volvera a cuadrado.
 
+        cuadrado.addEventListener('dblclick', (event) => {
+            console.log(event.target.style.borderRadius)
+            if (event.target.style.borderRadius !== '0%') {
+                event.target.style.borderRadius = '0%';
+            } else {
+                alert('Ya soy un cuadrado');
+            }
+
+        })
         //si hacemos dobleclick sobre el cuadrado me lanzará un alert diciendo que ya es cuadrado.
 
 
