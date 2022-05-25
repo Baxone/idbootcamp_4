@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cuadrado {
+            background-color: black;
+            width: 100px;
+            height: 100px;
+            transition: 1s;
+        }
+
+        .rojo {
+            background-color: tomato;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .amarillo {
+            background-color: yellow;
+        }
+
+        .tamano {
+            width: 300px;
+        }
+
+        .radio {
+            border-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cuadrado rojo radio"></div>
+
+    <script>
+        const cuadrado = document.querySelector('.cuadrado');
+
+        //error por que classList me ofrece una serie de metodos para hacer esto.
+        cuadrado.classList[1] = "verde"
+
+        //añado una class a lista que no esta
+        cuadrado.classList.add('tamano');
+
+        //borrar una class 
+        cuadrado.classList.remove('tamano');
+
+        //replazar un clase por otra
+        cuadrado.classList.replace('rojo', 'verde');
+
+        //toggle, lo que hace es si existe la clase la elimina y si no existe la añade.
+
+        function cambiarClase() {
+            cuadrado.classList.toggle('tamano');
+        }
+
+
+
+    </script>
+</body>
+
+</html>

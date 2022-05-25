@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgrey;
+}
+
+h2{
+    padding: 20px;
+}
+
+hr{
+    margin-bottom: 20px;
+}
+
+.agenda .flex{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.agenda .flex article{
+    margin: 10px;
+    width: calc(33.333% - 20px);
+    position: relative;
+   
+}
+
+.agenda .flex article :is(.info, .sombra){
+    border: 1px solid salmon;
+    padding: 10px;
+    border-radius: 10px; 
+    transition: 1s;
+}
+
+.agenda .flex article .info{
+    background-color: white;
+    position: relative;
+}
+
+.agenda .flex article .sombra{
+    background-color: salmon;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.agenda .flex article:hover .info{
+    transform: translate(-5px, -5px);
+}
+
