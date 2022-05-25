@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de tipo listener</title>
+    <style>
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="menu">
+        <li id="blue">Azul</li>
+        <li id="green">Verde</li>
+        <li id="tomato">Rojo</li>
+        <li id="gold">Yellow</li>
+    </ul>
+
+
+    <script>
+
+        const lis = document.querySelectorAll("#menu li");
+
+        lis.forEach(li => li.addEventListener('click', cambiarColor));
+        let estado = "0px";
+
+        function cambiarColor(event) {
+            //event.target es lo mismo que this
+            console.log(event.target.id);
+            document.body.style.backgroundColor = event.target.id;
+            estado = (estado === '0px') ? '200px' : '0px';
+            event.target.style.marginLeft = estado;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
