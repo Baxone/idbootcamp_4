@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de empleados</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="./js/modelo.js"></script>
 </head>
 
 <body>
@@ -26,13 +27,13 @@
                     <input type="number" id="salary" placeholder="introduce tu sueldo">
                 </div>
 
-                <input type="submit" value="Enviar">
+                <input id="submit" type="submit" value="Enviar">
             </form>
         </header>
         <main>
             <h2>Listado de Empleados</h2>
             <section id="empleados">
-                <article>
+                <!-- <article>
                     <h3>Nombre del empleado</h3>
                     <p>Email: </p>
                     <p>Salario Mensual: <span class="minimo">200€</span> </p>
@@ -40,10 +41,13 @@
                         <button>Borrar</button>
                     </div>
                 </article>
+                -->
             </section>
         </main>
     </div>
 
+    <script src="./js/controlador.js"></script>
+    <script src="./js/vista.js"></script>
 </body>
 
 </html>

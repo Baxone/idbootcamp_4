@@ -30,6 +30,10 @@ body{
 header{
     background-color: beige;
     box-shadow: 1px 1px 10px #aaa;
+    z-index: 1;
+    position: sticky;
+    top:0;
+    left: 0;
 }
 
 header input{
@@ -54,6 +58,12 @@ main article h3{
 
 main article .minimo{
     color: tomato;
+    font-weight: bold;
+}
+
+main article .correcto{
+    color: green;
+    font-weight: bold;
 }
 
 main article button{
