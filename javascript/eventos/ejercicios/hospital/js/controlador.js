@@ -21,3 +21,9 @@ function filterByLastCharacter(pPatientList, pCharacter) {
 
     return listaFiltrada;
 }
+
+//busqueda semantica
+
+function filterByName(pList, pWord) {
+    return pList.filter(patient => patient.nombre.toLowerCase().includes(pWord.toLowerCase()) || patient.apellido.toLowerCase().includes(pWord.toLowerCase()))
+}

@@ -122,6 +122,51 @@ function llenarSelector(pList, pSelector) {
 
 llenarSelector(pacientes, selectDiagnostico);
 
+/* -------------------------------- */
+
+/* buscador semantico - event input */
+
+
+let inputSearch = document.querySelector('#search');
+inputSearch.addEventListener('input', recogerBusqueda);
+
+function recogerBusqueda(event) {
+    let busqueda = event.target.value;
+    //callback 
+    printAllPatients(filterByName(pacientes, busqueda), sectionPacientes, divNumPacientes)
+}
+
+/* ------------------------------------------ */
+
+/* Superfiltro supersahiyan */
+
+let inputEdadMin2 = document.querySelector('#edadmin2');
+let inputEdadMax2 = document.querySelector('#edadmax2');
+let selectDiagnostico2 = document.querySelector('#diagnostico2');
+let btn2 = document.querySelector('#btn2');
+
+llenarSelector(pacientes, selectDiagnostico2);
+btn2.addEventListener('click', recogerDatosForm);
+
+function recogerDatosForm(event) {
+    event.preventDefault();
+
+    let edadMin = inputEdadMin2.value;
+    let edadMax = inputEdadMax2.value;
+    let diagnostico = selectDiagnostico2.value;
+
+    let listaPorEdad = filterByAge(pacientes, edadMin, edadMax);
+    let listaFinal = filterByDiagnosis(listaPorEdad, diagnostico);
+    printAllPatients(listaFinal, sectionPacientes, divNumPacientes);
+}
+
+
+
+
+
+
+
+
 
 
 
