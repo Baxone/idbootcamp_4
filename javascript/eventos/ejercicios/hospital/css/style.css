@@ -1,0 +1,88 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor  article{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.contenedor article ul{
+    list-style: none;
+}
+
+.contenedor article h3{
+    text-align: center;
+    background-color: lightgray;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.contenedor article .diagnostico{
+    background-color: tomato;
+    padding: 5px;  
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+header div{
+    padding: 20px;
+}
+
+header h2{
+    font-size: 110%;
+}
+
+header hr{
+    margin: 10px 0px;
+}
+
+header :is(label, input){
+    display: block;
+}
+
+header input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+header button{
+    padding: 10px;
+}
+
+main{
+    padding: 20px;
+}
+
+main .numpacientes{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 35px;
+    text-align: center;
+}
+
+@media(min-width: 768px){
+    .contenedor  article{
+      width:calc(33.333% - 20px);
+    }
+}
+

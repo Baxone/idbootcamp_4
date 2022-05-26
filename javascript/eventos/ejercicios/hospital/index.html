@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital la princesa</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h2>Filtro de edad</h2>
+            <hr>
+            <label for="edadmin">Edad Minima</label>
+            <input type="number" id="edadmin" placeholder="introduce la edad minima">
+
+            <label for="edadmax">Edad Maxima</label>
+            <input type="number" id="edadmax" placeholder="introduce la edad maxima">
+
+            <button id="btn">Filtrar</button>
+        </div>
+        <hr>
+        <div>
+            <h2>Filtro por diagnostico</h2>
+            <hr>
+            <select id="diagnostico">
+                <option value="">Selecciona un diagnostico</option>
+            </select>
+        </div>
+
+
+    </header>
+    <main>
+        <div class="numpacientes">0</div>
+        <section class="contenedor">
+            <!-- <article class="paciente">
+            <h3>Nombre completo del paciente</h3>
+            <ul>
+                <li>Edad: 23</li>
+                <li>SS: A234567</li>
+            </ul>
+            <div class="diagnostico">Gripe</div>
+        </article> -->
+        </section>
+    </main>
+
+
+    <script src="./js/controlador.js"></script>
+    <script src="./js/vista.js"></script>
+</body>
+
+</html>
