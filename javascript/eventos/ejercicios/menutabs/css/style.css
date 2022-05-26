@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.15em;
+}
+
+.tabs{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tabs .menu{
+    list-style: none;
+    display: flex;
+}
+
+.tabs .menu li {
+    width: 100%;
+}
+
+.tabs .menu li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.tabs .menu :is(a:hover, .activo){
+    background-color: burlywood;
+    color: black
+}
+
+.tabs .contenedor{
+    padding: 20px;
+    border: 1px solid black;
+    line-height: 1.45em;
+}
+
+#contact, #studies{
+    display: none;
+}
