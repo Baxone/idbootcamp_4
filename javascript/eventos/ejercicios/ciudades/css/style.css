@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    width: 30%;
+    height: 100vh;
+    padding: 20px;
+}
+
+main{
+    width: 70%;
+    border-left: 1px solid black;
+    height: 100vh;
+}
+
+button{
+    padding: 10px;
+}
+
+.ciudades{
+    margin-top: 20px;
+    list-style: none;
+}
+
+.ciudades li{
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    background-color: black;
+    color: white;
+}
+
+.mapa{
+    height: 100vh;
+}
