@@ -22,7 +22,6 @@ function guardarEmpleado(pList, pName, pEmail, pSueldo) {
 
 }
 
-
 function deleteEmployee(pList, pId) {
     return pList.filter(employee => employee.id !== pId);
-}   
+}

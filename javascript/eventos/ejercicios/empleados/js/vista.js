@@ -38,9 +38,8 @@ function printOne(pEmployee, pDom) {
     let div = document.createElement('div');
     let button = document.createElement('button');
     //a esta objeto le puedo añadir un evento
-    button.addEventListener('click', borrar);
     button.dataset.id = pEmployee.id
-
+    button.addEventListener('click', borrar);
     h3.innerText = pEmployee.name;
     pEmail.innerText = `Email: ${pEmployee.email}`;
     pSalary.innerText = 'Salario Mensual: '
@@ -59,16 +58,17 @@ function printOne(pEmployee, pDom) {
 }
 
 function borrar(event) {
-    let id = parseInt(event.target.dataset.id);
-
-    let itemBorrar = document.querySelector('#employee_' + id);
-    itemBorrar.parentNode.removeChild(itemBorrar)
+    let id = parseInt(event.target.dataset.id)
+    let itemBorrar = document.querySelector('#employee_' + id)
+    itemBorrar.parentNode.removeChild(itemBorrar);
     empleados = deleteEmployee(empleados, id);
     if (empleados.length === 0) {
-        printAllEmployees(empleados, sectionEmpleados)
+        printAllEmployees(empleados, sectionEmpleados);
     }
-
 }
+
+
+
 
 printAllEmployees(empleados, sectionEmpleados);
 
