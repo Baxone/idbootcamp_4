@@ -9,7 +9,12 @@ const sueldoMinimo = 900;
 
 function printAllEmployees(pList, pDom) {
     pDom.innerHTML = "";
-    pList.forEach(employee => printOne(employee, pDom));
+    if (pList.length !== 0) {
+        pList.forEach(employee => printOne(employee, pDom));
+    } else {
+        pDom.innerHTML = '<h2 style="color: tomato">No hay empleados en la BBDD</h2>'
+    }
+
 }
 
 /*
@@ -25,12 +30,16 @@ function printAllEmployees(pList, pDom) {
 
 function printOne(pEmployee, pDom) {
     let article = document.createElement('article');
+    article.id = 'employee_' + pEmployee.id
     let h3 = document.createElement('h3');
     let pEmail = document.createElement('p')
     let pSalary = document.createElement('p');
     let span = document.createElement('span');
     let div = document.createElement('div');
     let button = document.createElement('button');
+    //a esta objeto le puedo añadir un evento
+    button.addEventListener('click', borrar);
+    button.dataset.id = pEmployee.id
 
     h3.innerText = pEmployee.name;
     pEmail.innerText = `Email: ${pEmployee.email}`;
@@ -46,6 +55,18 @@ function printOne(pEmployee, pDom) {
     article.append(h3, pEmail, pSalary, div)
 
     pDom.appendChild(article);
+
+}
+
+function borrar(event) {
+    let id = parseInt(event.target.dataset.id);
+
+    let itemBorrar = document.querySelector('#employee_' + id);
+    itemBorrar.parentNode.removeChild(itemBorrar)
+    empleados = deleteEmployee(empleados, id);
+    if (empleados.length === 0) {
+        printAllEmployees(empleados, sectionEmpleados)
+    }
 
 }
 

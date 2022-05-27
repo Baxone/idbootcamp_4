@@ -1,6 +1,6 @@
 let id = 5;
 
-const empleados = new Array(
+let empleados = new Array(
     {
         id: 1,
         name: 'Juan Antonio',

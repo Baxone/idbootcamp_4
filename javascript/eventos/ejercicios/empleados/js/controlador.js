@@ -16,9 +16,13 @@ function guardarEmpleado(pList, pName, pEmail, pSueldo) {
             printOne(newEmployee, sectionEmpleados)
         }
         id++;
-        console.log(pList)
     } else {
         alert('Usuario duplicado')
     }
 
 }
+
+
+function deleteEmployee(pList, pId) {
+    return pList.filter(employee => employee.id !== pId);
+}   
