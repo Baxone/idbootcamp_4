@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+select{
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    padding: 10px;
+}
+
+main h1{
+    margin-bottom: 20px;
+}
+
+main section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section article{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #aaa;
+    text-align: center;
+    margin: 10px;
+    width: calc(50% - 20px);
+}
