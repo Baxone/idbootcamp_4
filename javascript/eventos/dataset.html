@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset</title>
+    <script>
+        const cuadrados = new Array(
+            {
+                id: 1,
+                color: 'tomato',
+                width: '100px',
+                height: '100px',
+                animacion: '300px',
+                tipo: 'desplazamiento'
+            },
+            {
+                id: 2,
+                color: 'lightblue',
+                width: '70px',
+                height: '70px',
+                animacion: '2',
+                tipo: 'escala'
+            },
+            {
+                id: 3,
+                color: 'black',
+                width: '200px',
+                height: '200px',
+                animacion: '300px',
+                tipo: 'anchura'
+            }
+        )
+    </script>
+</head>
+
+<body>
+
+    <section class="cuadrados" data-seccion="miscuadraditos">
+
+    </section>
+
+
+    <script>
+        const sectionCuadrados = document.querySelector('.cuadrados');
+
+        function printCuadrados(pList, pDom) {
+            pList.forEach(cuadrado => printOneCuadrado(cuadrado, pDom))
+        }
+
+        function printOneCuadrado(pCuadrado, pDom) {
+            let div = document.createElement('div');
+            div.style.backgroundColor = pCuadrado.color;
+            div.dataset.id = pCuadrado.id;
+            div.dataset.animacion = pCuadrado.animacion;
+            div.dataset.tipo = pCuadrado.tipo;
+            div.style.width = pCuadrado.width;
+            div.style.height = pCuadrado.height;
+            div.addEventListener('click', hacerClick)
+            pDom.appendChild(div);
+        }
+
+        printCuadrados(cuadrados, sectionCuadrados)
+
+        function hacerClick(event) {
+            event.target.style.transition = '1s';
+            switch (event.target.dataset.tipo) {
+                case 'desplazamiento':
+                    event.target.style.marginLeft = event.target.dataset.animacion;
+                    break;
+
+                case 'escala':
+                    event.target.style.transform = `scale(${event.target.dataset.animacion})`;
+                    break;
+
+                case 'anchura':
+                    event.target.style.width = event.target.dataset.animacion;
+                    break;
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
