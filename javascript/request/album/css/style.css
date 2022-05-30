@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#album{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#album figure{
+    width: calc(20% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
