@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacion de promesas</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        //una promesa es un objeto Promise
+        function obtenerNota() {
+            const miPromesa = new Promise((resolve, reject) => {
+                setTimeout(() => {
+
+                    let nota = Math.random() * 15
+                    if (nota >= 0 && nota < 5) {
+                        resolve('la promesa se resuelve, el alumno es suspenso ' + nota);
+                    } else if (nota >= 5 && nota <= 10) {
+                        resolve('la promesa se resuelve, el alumno esta aprobado ' + nota);
+                    } else {
+                        reject('la promesa me da error, el numero no es valido ' + nota)
+                    }
+
+                }, 5000)
+            });
+            return miPromesa;
+        }
+
+        //la consumicion de la promesa, es como usa una vez construida. Una promesa tiene dos metodo de consumicion
+        //then() que gestiona el resolve
+        //catch() que gestiona el reject
+
+        obtenerNota()
+            .then((pMensaje) => {
+                console.log(pMensaje)
+            })
+            .catch((pError) => {
+                console.log(pError)
+            })
+
+        console.log('algo que tiene que cargarse despues de la promesa');
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

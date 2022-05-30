@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Then Catch Finally</title>
+</head>
+
+<body>
+
+    <button id="btn">Numero Aleatorio</button>
+    <h1>Numero: <span></span></h1>
+    <h2 id="final"></h2>
+    <h3 id="otraseccion"></h3>
+
+    <script>
+
+        const btn = document.querySelector('#btn');
+        const span = document.querySelector('h1 span');
+        const h2final = document.querySelector('#final')
+        const otraSeccion = document.querySelector('#otraseccion');
+
+        btn.addEventListener('click', recogerClick)
+
+        function recogerClick(event) {
+            obtenerNumeroAleatorio(14)
+                .then((pNum) => {
+                    span.innerText = pNum;
+                })
+                .catch((pError) => { console.log(pError) })
+                .finally(() => {
+                    h2final.innerText = "Este texto se pinta tanto si la promesa se resuelve como si da error, siempre ocurre."
+                })
+        }
+
+        function obtenerNumeroAleatorio(pNum) {
+            const promesa = new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+
+                    let numAleatorio = Math.floor(Math.random() * pNum);
+                    if (isNaN(numAleatorio)) {
+                        reject('El numero que me has pasado es una cadena');
+                    } else {
+                        resolve(numAleatorio);
+                    }
+                }, 3000)
+
+            })
+            return promesa;
+        }
+
+        otraseccion.innerText = "este texto se carga durante la promesa por una delegación de la misma."
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
