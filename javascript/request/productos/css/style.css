@@ -60,6 +60,7 @@ section .flex article{
     box-shadow: 1px 1px 10px #aaa;
     padding: 10px;
     border: 1px solid #aaa;
+    margin-bottom: 10px;
 }
 
 section .flex article button{
