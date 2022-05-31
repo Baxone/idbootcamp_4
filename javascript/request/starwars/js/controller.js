@@ -7,3 +7,16 @@ async function getDataMenu(pUrl) {
 }
 
 getDataMenu(url)
+
+async function getDataInfo(pUrl) {
+    const response = await fetch(pUrl, { method: 'GET' })
+    const data = await response.json();
+
+    if (data.episode_id) {
+        //soy una peli
+        printFilm(data)
+    } else {
+        //soy un personaje
+        printCharacter(data);
+    }
+}

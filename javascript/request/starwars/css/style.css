@@ -84,6 +84,12 @@ main #vistaPersonaje{
 main h2{
     margin: 20px 0;
     text-decoration: underline;
+    font-size: 130%;
+    font-weight: 700;
+}
+
+main #vistaPersonaje span{
+    font-weight: 700;
 }
 
 main #vistaPersonaje .peliculas{
@@ -111,7 +117,7 @@ main #vistaPersonaje .peliculas article h3{
 @media(min-width: 600px){
     header{
         max-width: 425px;
-        height: 100vh;
+        min-height: 100vh;
     }
     main{
         width: calc(100% - 425px);
