@@ -1,0 +1,130 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+img{
+    width: 100%;
+    height: auto;
+    display:block;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    font-size: 1em;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    max-width: 600px;
+    background-color: black;
+    padding:20px;
+    height: auto;
+}
+
+header .logo{
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+}
+
+header #personajes li{
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+header #personajes li:hover{
+    background-color: #ffe919;
+    color: black;
+}
+
+header .botones{
+    display: flex;
+    margin-top: 20px;
+}
+
+header .botones div{
+    border: 1px solid #ffe919;
+    color: #ffe919;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+header .botones div:hover{
+    background-color: #ffe919;
+    color: black;
+}
+
+header .botones div:last-child{
+    text-align: right;
+}
+
+/* main inicio */
+
+main{
+    padding: 20px;
+    width: 100%;
+}
+
+main #vistaPersonaje{
+    border: 1px solid black;
+    padding: 20px;  
+}
+
+main h2{
+    margin: 20px 0;
+    text-decoration: underline;
+}
+
+main #vistaPersonaje .peliculas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main #vistaPersonaje .peliculas article{
+    background-color: black;
+    border: 2px solid #ffe919;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    width: calc(100% - 40px);
+}
+
+main #vistaPersonaje .peliculas article h3{
+    color: #ffe919;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+/* vamos hacer dos mediaqueries 600px y 960px */
+
+@media(min-width: 600px){
+    header{
+        max-width: 425px;
+        height: 100vh;
+    }
+    main{
+        width: calc(100% - 425px);
+        height: 100vh;
+    }
+}
+
+@media(min-width: 960px){
+    main #vistaPersonaje .peliculas article{
+        width: calc(33.333% - 40px)
+    }
+}
+
+
+
+
