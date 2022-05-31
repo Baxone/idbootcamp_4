@@ -9,3 +9,4 @@
         OJO hay productos que son del misma categoria (que va haber categorias repetidas)
         Cuando cambies de de categoria os debe mostrar solo los productos de esa categoria.
 
+    
