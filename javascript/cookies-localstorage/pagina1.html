@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 1</title>
+</head>
+
+<body>
+    <header>
+        <a href="pagina1.html">Pagina 1</a>
+        <a href="pagina2.html">Pagina 2</a>
+        <a href="pagina3.html">Pagina 3</a>
+    </header>
+    <main>
+        <h1>Pagina 1</h1>
+    </main>
+    <script>
+
+        let precio = 125;
+        let nombre = "Juan Antonio"
+        const listado = new Array('Perro', 'Gato', 'Periquito')
+
+        //localStorage tiene 4 metodos, setItem(), getItem(), removeItem() , clear()
+        // setItem('nombre en el localstorage', valor en string) guardar en localstorage
+
+        // getItem('nombre en el localstorage'), me devuelve el valor almacenado con ese literal, me lo devuelve como string.
+
+        // removeItem('nombre en el localstorage'), borra exactemente ese elemento.
+
+        //clear() borra todo el local storage.
+
+
+        localStorage.setItem('miNombre', nombre)
+        localStorage.setItem('precio', precio);
+
+        // si quiero guardar un array de datos tengo que stringnificarlo
+
+        localStorage.setItem('animales', JSON.stringify(listado))
+
+
+
+    </script>
+</body>
+
+</html>
