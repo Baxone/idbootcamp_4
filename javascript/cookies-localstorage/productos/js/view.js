@@ -2,7 +2,11 @@ const sectionArticulos = document.querySelector('section .flex');
 const selectorCategorias = document.querySelector('#category')
 const cantidadCarrito = document.querySelector('.carrito p');
 let carrito = new Array();
-
+//voy a comprobar que localstorage no tiene datos en memoria
+if (localStorage.getItem('carrito') !== null) {
+    carrito = JSON.parse(localStorage.getItem('carrito'))
+    cantidadCarrito.innerText = carrito.length;
+}
 
 function printProducts(pData) {
     sectionArticulos.innerHTML = "";
@@ -35,11 +39,9 @@ async function addCarrito(event) {
     let productoCarrito = await getProduct(id);
 
     //tengo que guardarlo en el localstorage
-    //voy a comprobar que localstorage no tiene datos en memoria
-    if (localStorage.getItem('carrito') !== null) {
-        carrito = JSON.parse(localStorage.getItem('carrito'))
-    }
+
     carrito.push(productoCarrito);
+    cantidadCarrito.innerText = carrito.length;
 
     //una vez que he añadido el nuevo producto al carrito tengo que volver a guardar el array en el localstorage
 
