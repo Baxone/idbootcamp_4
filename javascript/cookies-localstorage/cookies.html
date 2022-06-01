@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Ducatti</h1>
+    <h2>Monster</h2>
+
+    <button id="btn">ACEPTO COOKIES</button>
+    <button id="btn2">LEER COOKIES</button>
+
+
+    <script>
+
+        const btnAcept = document.querySelector('#btn');
+        const btnRead = document.querySelector('#btn2');
+
+
+        btnAcept.addEventListener('click', guardarCookies);
+        btnRead.addEventListener('click', leerCookies);
+
+        function guardarCookies(event) {
+            let marca = document.querySelector('h1').innerText;
+            let producto = document.querySelector('h2').innerText;
+
+            //para crear una cookie capturas los elementos de texto que queremos guardar y lo almacenamos en las cookies de navegador, como texto.
+
+            document.cookie = "marca=" + marca;
+            document.cookie = "modelo=" + producto;
+            document.cookie = "tipo=naked";
+            document.cookie = "elmejorprofe=Mario"
+            console.log(document.cookie);
+        }
+
+
+        function leerCookies() {
+            let cookies = document.cookie;
+            //document.cookie es una cadena de caracteres que estan separadas por ; y un espacio,
+
+            let arrCookies = cookies.split('; ')
+            console.log(arrCookies);
+
+            let profe = arrCookies.find(cookie => cookie.includes('profe'))
+            profe = profe.split('=')[1];
+
+            document.write('el mejor profe de idbootcamps es ' + profe)
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
