@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(232, 232, 232);
+}
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+header{
+    padding: 20px;
+    background-color: #444;
+    border-bottom: 4px solid tomato;
+    color: white;
+    box-shadow: 1px 1px 10px #aaa;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .carrito{
+    display: block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    text-align: center;
+    border: 2px solid tomato;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header .carrito p{
+    font-size: 80%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+aside{
+    padding: 10px;
+}
+aside select{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(76, 76, 76);
+    color: white;
+    border: 0px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    padding: 10px;
+    background-color: #444;
+    width: 100%;
+    color: white;
+}
+
+section{
+    padding: 20px;
+}
+
+section .flex{
+    padding:20px 10px;
+}
+section .flex article{
+    background-color: white;
+    box-shadow: 1px 1px 10px #aaa;
+    padding: 10px;
+    border: 1px solid #aaa;
+    margin-bottom: 10px;
+}
+
+section .flex article button{
+    padding: 5px;
+    background-color: tomato;
+    border: 0px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+section .flex article button:hover{
+    background-color: brown;
+    color: white;
+}
+
+@media(min-width: 768px){
+   section .flex{
+       display: flex;
+       flex-wrap: wrap;
+   }
+
+    section .flex article{
+        padding: 10px;
+        border: 1px solid #aaa;
+        margin: 10px;
+        width: calc(25% - 20px);
+    }
+}
