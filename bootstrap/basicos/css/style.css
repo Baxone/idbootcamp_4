@@ -1,0 +1,8 @@
+ul{
+    list-style: none;
+}
+
+.caja{
+    background-color: tomato;
+    min-height: 60px;
+}
