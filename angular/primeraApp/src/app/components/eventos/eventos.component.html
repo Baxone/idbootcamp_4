@@ -1,0 +1,16 @@
+<div>
+  <select (change)="responder($event)">
+    <option value="">Selecciona un respuesta</option>
+    <option value="Madrid">Madrid</option>
+    <option value="Barcelona">Barcelona</option>
+    <option value="Valladolid">Valladolid</option>
+    <option value="Sevilla">Sevilla</option>
+  </select>
+</div>
+<p class="respuesta">Vives en la ciudad de {{ city }}</p>
+<hr>
+
+<div>
+  <input type="color" (input)="cambiarColor($event)">
+  <div class="caja" [style]="'background-color: ' + color">{{color}}</div>
+</div>
