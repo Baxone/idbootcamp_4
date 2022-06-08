@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <header>
+    <!-- paso 4 de ouput generar el evento personalizado -->
+    <app-formulario (numeroEnviado)="guardarNumero($event)"></app-formulario>
+  </header>
+  <hr>
+  <main>
+    <app-lista-numeros [atributo]="miAtributo" [titulo]="titulo" [numeros]="listaNumeros" [tipo]="'impares'"></app-lista-numeros>
+
+    <app-lista-numeros [atributo]="miAtributo" [titulo]="titulo" [numeros]="listaNumeros" [tipo]="'pares'"></app-lista-numeros>
+
+    <!-- <app-lista-numeros [atributo]="miAtributo" [titulo]="'Mi pequeña lista de numeros'" [numeros]="[2,3,4]"></app-lista-numeros> -->
+  </main>
+</div>
