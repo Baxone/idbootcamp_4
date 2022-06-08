@@ -9,6 +9,7 @@ import { SaludoComponent } from './components/saludo/saludo.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { CalculadoraComponent } from './components/calculadora/calculadora.component';
+import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
 
 
 
@@ -20,6 +21,7 @@ import { CalculadoraComponent } from './components/calculadora/calculadora.compo
     EventosComponent,
     GaleriaComponent,
     CalculadoraComponent,
+    CicloVidaComponent,
   ],
   imports: [
     BrowserModule,

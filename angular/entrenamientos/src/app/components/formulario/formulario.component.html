@@ -1,0 +1,14 @@
+<!-- TWO WAY DATABIDING -->
+<div>
+  <label for="entrenamiento">Introduce el entrenamiento</label>
+  <input type="text" id="entrenamiento" placeholder="introduce el entrenamiento" [(ngModel)]="nuevoEntrenamiento.titulo">
+</div>
+<div>
+  <label for="tiempo">Tiempo total del ejercicio</label>
+  <input type="number" id="tiempo" placeholder="tiempo total del ejercicio" [(ngModel)]="nuevoEntrenamiento.tiempo">
+</div>
+<div>
+  <label for="fecha">Introduce la fecha</label>
+  <input type="text" id="fecha" placeholder="introduce la fecha" [(ngModel)]="nuevoEntrenamiento.fecha">
+</div>
+<button (click)="guardar()">GUARDAR</button>

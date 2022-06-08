@@ -1,0 +1,26 @@
+.wrapper{
+  display: flex;
+  flex-wrap: no-wrap;
+}
+
+header{
+  width: 20%;
+  padding: 10px;
+  height: 100vh;
+  background-color: lightgrey;
+}
+
+main{
+  margin: 10px;
+  width: calc(80% - 20px);
+  position: relative;
+}
+
+aside{
+  position: absolute;
+  bottom: 10px;
+  background-color: darkred;
+  color: white;
+  padding:  40px;
+  width: 100%;
+}
