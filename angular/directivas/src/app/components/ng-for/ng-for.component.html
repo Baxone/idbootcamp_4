@@ -1,0 +1,29 @@
+<!-- <ul>
+  <li *ngFor="let numero of numeros">{{numero}}</li>
+</ul> -->
+
+<section class="episodios">
+  <h2>Primera Temporada</h2>
+
+  <select (change)="selectDirector($event)">
+    <option value="">Selecciona un director</option>
+    <option value="Tim Van Patten">Tim Van Patten</option>
+    <option value="Brian Kirk">Brian Kirk</option>
+    <option value="Daniel Minahan">Daniel Minahan</option>
+  </select>
+
+  <hr>
+  <div class="row">
+
+    <article *ngFor="let episodio of episodios; let i= index; let par = even; let impar = odd; let primero = first; let ultimo = last">
+      <small>{{i}}</small>
+      <h3 [innerHTML]="episodio.title"></h3>
+      <p [ngClass]="{'rojo': par, 'verde': impar}">Director: {{ episodio.director }} </p>
+      <p>Par: {{par}}</p>
+      <p>Impar: {{impar}}</p>
+      <p>Primero: {{primero}}</p>
+      <p>Ultimo: {{ultimo}}</p>
+    </article>
+
+  </div>
+</section>

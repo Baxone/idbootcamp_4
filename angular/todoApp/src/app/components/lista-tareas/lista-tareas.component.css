@@ -1,0 +1,20 @@
+.daily{
+  border: 1px solid #eee;
+  border-left: 7px solid #6287ec;
+  border-radius: 15px;
+  background-color: #eee;
+}
+
+.urgent{
+  border: 1px solid #eee;
+  border-left: 7px solid tomato;
+  border-radius: 15px;
+  background-color: #eee;
+}
+
+.monthly{
+  border: 1px solid #eee;
+  border-left: 7px solid #29d1a4;
+  border-radius: 15px;
+  background-color: #eee;
+}

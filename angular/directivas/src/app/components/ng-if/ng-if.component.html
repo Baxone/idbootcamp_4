@@ -1,0 +1,38 @@
+<!-- <p *ngIf="visible === 'visto'"> Parrafo 1: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium officiis magnam pariatur eius sequi. Eos veritatis possimus recusandae, iure alias, magnam dolorum pariatur esse praesentium sint sapiente, fugit assumenda numquam.</p>
+
+
+<p *ngIf="false">Parrafo 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum architecto mollitia, repudiandae, qui nobis molestiae eum, dolore doloribus aut eius debitis exercitationem? Nostrum saepe laudantium animi quod molestiae impedit ducimus.</p>
+
+<p [ngStyle]="{'display': 'none'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid officia debitis, ut aut, qui beatae, et veritatis delectus libero dolore odit aliquam veniam nemo consectetur ea corporis ipsum omnis molestiae!</p> -->
+
+<!-- MENU DE TABS -->
+
+<div class="tabs">
+  <nav>
+    <ul class="menu">
+      <li [ngClass]="{'activo': seccionActual === 'sobremi'}" (click)="cargarSeccion('sobremi')">Sobre mí</li>
+      <li [ngClass]="{'activo': seccionActual === 'experiencia'}" (click)="cargarSeccion('experiencia')">Experiencia</li>
+      <li [ngClass]="{'activo': seccionActual === 'estudios'}" (click)="cargarSeccion('estudios')">Estudios</li>
+    </ul>
+  </nav>
+
+  <section *ngIf="seccionActual === 'sobremi'">
+    <h3>Sobre mí</h3>
+    <p> 1 .Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ratione natus praesentium ex quisquam voluptatum numquam perspiciatis eligendi? Deserunt eligendi tempora odit doloremque unde dolores itaque architecto et explicabo quo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, eius facere debitis accusamus fuga temporibus nihil laborum reiciendis explicabo voluptatem perspiciatis voluptatibus omnis, corrupti voluptates nesciunt culpa incidunt, hic excepturi?</p>
+  </section>
+
+  <section *ngIf="seccionActual === 'experiencia'">
+    <h3>Experiencia</h3>
+    <p> 2 .Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ratione natus praesentium ex quisquam voluptatum numquam perspiciatis eligendi? Deserunt eligendi tempora odit doloremque unde dolores itaque architecto et explicabo quo.</p>
+
+  </section>
+
+  <section *ngIf="seccionActual === 'estudios'">
+    <h3>Estudios</h3>
+    <p> 3 .Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ratione natus praesentium ex quisquam voluptatum numquam perspiciatis eligendi? Deserunt eligendi tempora odit doloremque unde dolores itaque architecto et explicabo quo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, eius facere debitis accusamus fuga temporibus nihil laborum reiciendis explicabo voluptatem perspiciatis voluptatibus omnis, corrupti voluptates nesciunt culpa incidunt, hic excepturi?</p>
+  </section>
+
+
+</div>

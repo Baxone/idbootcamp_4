@@ -1,0 +1,10 @@
+.crono{
+  text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  width: 100px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px #444;
+  font-size: 150%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

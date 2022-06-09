@@ -1,0 +1,31 @@
+<button (click)="cambiarContenido()">Cambiar contenido</button>
+<!-- <div *ngIf="estado">
+  <p>Este contenido esta en estado = true</p>
+</div>
+<div *ngIf="!estado">
+  <p>Este contenido esta en estado = false</p>
+</div>
+-->
+
+<!-- opcion 2 -->
+<div *ngIf="estado; else bloqueElse">
+  <p>Estoy en true cojones</p>
+</div>
+<ng-template #bloqueElse>
+  <div>
+    <p>Estoy en false</p>
+  </div>
+</ng-template>
+
+<!-- then else -->
+<div *ngIf="estado; then contentTrue else contentFalse"></div>
+<ng-template #contentTrue>
+  <div>
+    <p>Estructura en true</p>
+  </div>
+</ng-template>
+<ng-template #contentFalse>
+  <div>
+    <p>Estructura en false</p>
+  </div>
+</ng-template>

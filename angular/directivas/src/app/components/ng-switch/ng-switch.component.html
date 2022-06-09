@@ -1,0 +1,15 @@
+<div class="notificaciones" [ngSwitch]="productos.length">
+  <p class="alert" *ngSwitchCase="0">No tienes stock. Tienes {{productos.length}}</p>
+  <p class="warning" *ngSwitchCase="1">Te queda {{productos.length}} </p>
+  <p class="warning" *ngSwitchCase="2">Te queda {{productos.length}}</p>
+  <p class="success" *ngSwitchCase="3">Te queda {{productos.length}}</p>
+  <p class="success" *ngSwitchDefault>Hay sufientes stock</p>
+</div>
+
+<hr>
+
+<div class="notificaciones">
+  <p class="alert" *ngIf="productos.length <= 0">No tienes stock. Tienes {{productos.length}}</p>
+  <p class="warning" *ngIf="productos.length >= 1 && productos.length <= 4">Te queda {{productos.length}}</p>
+  <p class="success" *ngIf="productos.length > 4">Hay suficiente stock. Tienes {{productos.length}}</p>
+</div>

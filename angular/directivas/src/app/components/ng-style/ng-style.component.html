@@ -1,0 +1,10 @@
+<input type="range" min="10" max="60" step="2" (input)="cambiarFuente($event)" [value]="fontSize">
+
+<p [ngStyle]="{'background-color' : color, 'color': 'white', 'padding': '10px', 'font-size': fontSize + 'px' }">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dolore illo, animi itaque adipisci hic ut, illum similique laborum doloremque, fugiat dicta perspiciatis aliquam vero voluptates magnam dolores architecto nesciunt!</p>
+<hr>
+
+<input type="text" placeholder="introduce una propiedad de css" [(ngModel)]="propiedad">
+<input type="text" placeholder="introduce el valor de la propiedad" [(ngModel)]="valor">
+<button (click)="cambiarEstilo()">Aplicar</button>
+
+<p [ngStyle]="estiloParrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis distinctio sunt quisquam nostrum molestias maxime architecto veniam reiciendis itaque? Beatae magni reiciendis reprehenderit libero autem illum odit quia, recusandae optio.</p>
