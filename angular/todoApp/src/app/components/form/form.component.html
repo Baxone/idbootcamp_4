@@ -1,1 +1,17 @@
-<p>form works!</p>
+<div class="form">
+  <div>
+    <label for="titulo" class="form-label">Titulo tarea</label>
+    <input type="text" id="titulo" class="form-control" [(ngModel)]="newTarea.titulo" placeholder="Introduce titulo de tarea">
+  </div>
+
+  <div class="mt-3">
+    <select class="form-select" [(ngModel)]="newTarea.prioridad">
+      <option value="">Selecciona una prioridad</option>
+      <option value="urgente">Urgente</option>
+      <option value="diaria">Diaria</option>
+      <option value="mensual">Mensual</option>
+    </select>
+  </div>
+
+  <button class="btn btn-danger mt-3" (click)="getDataForm()">Guardar</button>
+</div>

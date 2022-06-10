@@ -1,20 +1,27 @@
-<div class="container mt-3">
+<div class="container my-3">
   <h1>Gestión de tareas</h1>
   <hr>
   <section class="mt-3">
     <div class="row g-3">
       <div class="formulario col-12 col-md-6 mb-3">
         <!-- componente formulario -->
-        <app-form></app-form>
+        <app-form (tareaEmitida)="getNewTarea($event)"></app-form>
       </div>
       <div class="filtros col-12 col-md-6 mb-3">
         <!-- componente filtros -->
-        <app-filtros></app-filtros>
+        <app-filtros (busqueda)="search($event)" (filtroPrioridad)="filterPrioridad($event)"></app-filtros>
       </div>
     </div>
   </section>
   <section class="card p-3 shadow">
-    <app-lista-tareas></app-lista-tareas>
+    <app-lista-tareas [tareas]="misTareas" (deletearTarea)="deleteTask($event)"></app-lista-tareas>
   </section>
 
+</div>
+<!-- es mi alerta-->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1">
+  <div [class]="'alert alert-dismissible fade alert-' + tipo" [ngClass]="{ 'show': alert }" role="alert">
+    {{ textAlert }}
+    <button type="button" class="btn-close" (click)="closeAlert()"></button>
+  </div>
 </div>

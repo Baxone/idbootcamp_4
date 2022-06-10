@@ -1,1 +1,14 @@
-<p>filtros works!</p>
+<div class="filters">
+  <div>
+    <label class="form-label">Filtros de busqueda</label>
+    <select class="form-select" (change)="getDataPriority($event)">
+      <option value="">Selecciona prioridad</option>
+      <option value="urgente">Urgente</option>
+      <option value="diaria">Diaria</option>
+      <option value="mensual">Mensual</option>
+    </select>
+  </div>
+  <div class="mt-3">
+    <input type="search" class="form-control" placeholder="buscador por tarea" (input)="getDataSearch($event)">
+  </div>
+</div>

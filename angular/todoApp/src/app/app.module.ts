@@ -1,11 +1,17 @@
+//imports
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+//declarations
 import { AppComponent } from './app.component';
-import { FormComponent } from './components/form/form.component';
 import { FiltrosComponent } from './components/filtros/filtros.component';
+import { FormComponent } from './components/form/form.component';
 import { ListaTareasComponent } from './components/lista-tareas/lista-tareas.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -16,7 +22,8 @@ import { TareaComponent } from './components/tarea/tarea.component';
     TareaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
