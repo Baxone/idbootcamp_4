@@ -1,0 +1,30 @@
+<div class="container mt-3">
+  <form novalidate #miFormulario="ngForm" (ngSubmit)="getDataForm(miFormulario)">
+    <div class="my-2">
+      <label for="name" class="form-label">Nombre</label>
+      <input class="form-control" type="text" id="name" name="name" ngModel>
+    </div>
+
+    <div class="my-2">
+      <label for="age" class="form-label">Edad</label>
+      <input class="form-control" type="number" id="age" name="age" ngModel>
+    </div>
+
+    <div class="my-2">
+      <label for="mail" class="form-label">Email</label>
+      <input class="form-control" type="email" id="mail" name="mail" ngModel>
+    </div>
+
+    <div class="my-4">
+      <select name="job" ngModel class="form-select">
+        <option value="">Selecciona un trabajo</option>
+        <option value="frontend">Desarrollador Frontend</option>
+        <option value="backend">Desarrollador Backend</option>
+        <option value="fullstack">Desarrollador FullStack</option>
+      </select>
+    </div>
+
+    <input type="submit" class="btn btn-danger mt-2" value="Enviar">
+
+  </form>
+</div>

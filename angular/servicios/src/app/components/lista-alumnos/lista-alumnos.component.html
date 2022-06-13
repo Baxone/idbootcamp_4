@@ -1,0 +1,13 @@
+<div class="filtros">
+  <input class="form-control" type="number" placeholder="introduce edad minima" [(ngModel)]="edadMin">
+  <input class="form-control my-3" type="number" placeholder="introduce edad maxima" [(ngModel)]="edadMax">
+  <button class="btn btn-danger w-100 mb-3" (click)="getDataAge()">Filtrar</button>
+</div>
+<div class="row">
+
+  <!-- superficie iterable que forma cada alumno *ngFor recorriendo el array de alumno que tenemos que pedir al servicio -->
+  <article class="col-12 col-md-6 col-lg-4" *ngFor="let alumno of alumnos">
+    <app-alumno [miAlumno]="alumno" (alumnoBorrado)="onDeleteStudent($event)"></app-alumno>
+  </article>
+
+</div>
