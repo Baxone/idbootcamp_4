@@ -1,0 +1,41 @@
+<div>
+  <h2>Registro Empleados</h2>
+  <hr>
+  <form novalidate #registroEmpleados="ngForm" (ngSubmit)="getDataForm(registroEmpleados) ">
+
+    <div class="mt-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input class="form-control" type="text" id="name" name="name" ngModel placeholder="Introduce un nombre">
+    </div>
+
+    <div class="mt-3">
+      <label for="surname" class="form-label">Apellidos</label>
+      <input class="form-control" type="text" id="surname" name="surname" ngModel>
+    </div>
+
+    <div class="mt-3">
+      <label for="dni" class="form-label">DNI</label>
+      <input class="form-control" type="text" id="dni" name="dni" ngModel>
+    </div>
+
+    <div class="mt-3">
+      <label for="email" class="form-label">Email</label>
+      <input class="form-control" type="email" id="email" name="email" ngModel>
+    </div>
+
+    <div class="mt-3">
+      <label for="photo" class="form-label">Foto</label>
+      <input class="form-control" type="text" id="photo" name="photo" ngModel>
+    </div>
+
+    <div class="mt-4">
+      <select class="form-select" name="department" ngModel>
+        <option value="">Selecciona un departamento</option>
+        <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{departamento.title}}</option>
+      </select>
+    </div>
+
+    <input type="submit" value="Guardar" class="btn btn-dark mt-3">
+
+  </form>
+</div>
