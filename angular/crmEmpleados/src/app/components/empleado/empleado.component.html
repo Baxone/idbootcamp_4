@@ -1,1 +1,12 @@
-<p>empleado works!</p>
+<div class="card border-2" [ngClass]="{'border-danger': !miEmpleado.status, 'border-success': miEmpleado.status}">
+  <img [src]="miEmpleado.photo" class="card-img-top" [alt]="miEmpleado.name">
+  <div class="card-body">
+    <h5 class="card-title">{{miEmpleado.name}} {{miEmpleado.surname}}</h5>
+    <ul class="card-text">
+      <li>Email: {{miEmpleado.email}}</li>
+      <li>DNI: {{miEmpleado.dni}}</li>
+      <li>Departamento: {{ printDepartment(miEmpleado.department)}}</li>
+    </ul>
+    <button class="btn" [ngClass]="{'btn-danger': !miEmpleado.status, 'btn-success': miEmpleado.status}" (click)="changeStatus()">{{ (miEmpleado.status) ? 'Activo': 'Inactivo' }}</button>
+  </div>
+</div>

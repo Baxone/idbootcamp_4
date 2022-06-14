@@ -24,17 +24,24 @@ export class FormularioComponent implements OnInit {
 
   }
 
-  getDataForm(pForm: any) {
+  getDataForm(pForm: any): boolean {
     pForm.value.department = Number(pForm.value.department)
     // los datos del formulario hay que enviarlos al servicio al del empleados
-    let msg = this.empleadosServices.insertEmployee(pForm.value)
-    if (msg === "Usuario registrado correctamente") {
-      //entonces actualizo el departamento
+    if (pForm.value.name === "" || pForm.value.surname === "" || pForm.value.email === "" || pForm.value.dni === "" || pForm.value.photo === "" || pForm.value.department === 0) {
+      alert('Todos campos son obligatorios');
+      return false;
     }
-    alert(msg);
+
+    let response: any = this.empleadosServices.insertEmployee(pForm.value)
+    if (response.status) {
+      //entonces actualizo el departamento
+      let departamento: Departamento = this.departamentosServices.updateNumEmployees(pForm.value.department);
+      console.log(departamento)
+    }
+    alert(response.msg);
     //habria que actulizar el array de departementos le numero de empleados.
     pForm.resetForm({ department: "" })
-
+    return true
   }
 
   //lo primero: llenar el selector con todos los departamentos, para ello consultaremos al servicio de departamente pidendole todos los departamentos.

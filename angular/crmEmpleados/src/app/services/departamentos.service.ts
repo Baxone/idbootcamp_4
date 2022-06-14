@@ -12,7 +12,7 @@ export class DepartamentosService {
       {
         id: 1,
         title: 'Marketing',
-        numEmployees: 0
+        numEmployees: 1
       },
       {
         id: 2,
@@ -22,7 +22,7 @@ export class DepartamentosService {
       {
         id: 3,
         title: 'Desarrollo',
-        numEmployees: 0
+        numEmployees: 1
       }
       ,
       {
@@ -33,9 +33,42 @@ export class DepartamentosService {
     ]
   }
 
+  /**
+   *  getAll
+   *  @params none
+   *  @returns Array Departamento[]
+   */
   getAll(): Departamento[] {
     return this.arrDepartment;
   }
+
+  /**
+   *  updateNumEmployees
+   *  @params id: number
+   *  @returns  Object Departamento
+   */
+  updateNumEmployees(pId: number) {
+    //buscar el departamento por id
+    let departamentoActualizar: any = this.getById(pId);
+    if (departamentoActualizar !== undefined) {
+      departamentoActualizar.numEmployees++;
+      return departamentoActualizar;
+    }
+    return {};
+
+  }
+
+
+  /**
+   * getById
+   * @param pId : number
+   * @returns Object Departamento
+   */
+  getById(pId: number): Departamento | undefined {
+    return this.arrDepartment.find(departamento => departamento.id === pId);
+  }
+
+
 
 
 
