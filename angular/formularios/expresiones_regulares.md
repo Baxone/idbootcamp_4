@@ -6,7 +6,7 @@
 las expresiones regulares no van entre comillas no son cadenas de caracteres.
   - emails
 
-       `  /\S+\@\S+\.\S+/ ` 
+       `  /^\S+\@\S+\.\S+/ ` 
           juan@gmail.com
     ##    /			-	Indica inicio de expresión string
     ##   \S 			-	Indica que se espera un caracter diferente a un espacio en blanco
