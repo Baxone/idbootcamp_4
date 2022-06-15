@@ -1,3 +1,8 @@
 <section class="container mt-3 card">
   <h1>Servicios</h1>
+  <hr>
+  <ul class="list-group border-0 p-3">
+    <li role="button" [routerLink]="['/servicio', servicio.url]" class="list-group-item" *ngFor="let servicio of arrServicios">{{servicio.title}}</li>
+  </ul>
+
 </section>

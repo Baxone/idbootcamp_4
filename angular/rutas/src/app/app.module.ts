@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +14,9 @@ import { C404Component } from './components/c404/c404.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { VistaProductoComponent } from './components/vista-producto/vista-producto.component';
+import { VistaServicioComponent } from './components/vista-servicio/vista-servicio.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +27,15 @@ import { VistaProductoComponent } from './components/vista-producto/vista-produc
     C404Component,
     ServiciosComponent,
     ProductosComponent,
-    VistaProductoComponent
+    VistaProductoComponent,
+    VistaServicioComponent,
+    ProductFormComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
