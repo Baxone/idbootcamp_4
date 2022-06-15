@@ -1,0 +1,12 @@
+<section class="container card p-5 mt-3">
+  <h2>{{producto.title}}</h2>
+  <figure>
+    <img [src]="producto.photo" [alt]="producto.title">
+  </figure>
+  <ul>
+    <li>Precio: {{producto.price}}</li>
+    <li>Stock: {{producto.stock}}</li>
+  </ul>
+  <hr>
+  <button class="btn btn-success" [routerLink]="['/productos']">Volver a listado</button>
+</section>

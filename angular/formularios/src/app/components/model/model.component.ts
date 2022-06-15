@@ -56,7 +56,22 @@ export class ModelComponent implements OnInit {
 
   dniValidator(pControlName: AbstractControl) {
     //intentar validar el dni que este bien escrito y que letra concuerde.
-    return null
+    const dni = pControlName.value;
+    const letrasDni = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+    const expRegDni = /^\d{8}[A-Z]{1}/
+    if (expRegDni.test(dni)) {
+      //el dni esta bien escrito pero no significa que sea valido.
+      const numero = Number(dni.substring(0, dni.length - 1)) //21345677
+      const letra = dni[dni.length - 1]
+
+      const position = numero % 23;
+
+      return (letra !== letrasDni[position]) ? { dnivalidator: 'La letra no corresponde al tu dni' } : null
+
+    } else {
+      return { dnivalidator: 'formato del dni es incorrecto' }
+    }
+
   }
 
 

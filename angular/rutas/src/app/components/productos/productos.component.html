@@ -1,0 +1,20 @@
+<section class="container mt-3 card p-5">
+  <h1>Productos</h1>
+  <hr>
+  <div class="row g-3">
+
+    <article class="col-12 col-md-6 col-lg-4" *ngFor="let producto of productos">
+      <div class="card p-3">
+        <figure>
+          <img [src]="producto.photo" [alt]="producto.title">
+        </figure>
+        <h3 class="card-title text-center">{{producto.title}}</h3>
+        <button class="btn btn-secondary" [routerLink]="['/producto', producto.id]">Vista producto</button>
+      </div>
+    </article>
+
+
+
+  </div>
+
+</section>
