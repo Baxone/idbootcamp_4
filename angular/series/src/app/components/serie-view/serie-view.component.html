@@ -1,0 +1,22 @@
+<div class="card mb-3 bg-transparent text-light">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="serie.imagen" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h1 class="card-title">{{ serie.titulo }}</h1>
+          <button class="botoncito border-0" [routerLink]="['/series']">Volver a series</button>
+        </div>
+        <p class="card-text">Director: <strong>{{serie.creador}}</strong></p>
+        <p class="card-text">Años de emision: {{serie.fechas}}</p>
+        <p class="card-text">Se emite en: {{serie.canal}}</p>
+        <p class="card-text"><small class="text-muted">Puntuacion: {{ serie.rating }}</small></p>
+        <hr>
+        <button class="botoncito border-0">Personajes</button>
+        <button class="botoncito border-0">Temporadas</button>
+      </div>
+    </div>
+  </div>
+</div>

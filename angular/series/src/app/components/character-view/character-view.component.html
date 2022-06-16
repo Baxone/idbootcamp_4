@@ -1,0 +1,19 @@
+<div class="card mb-3 bg-transparent text-light">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="character.imagen" class="img-fluid rounded-start" [alt]="character.nombre_real">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h1 class="card-title">{{character.nombre_real}}</h1>
+          <button class="botoncito border-0" [routerLink]="['/personajes']">Volver a personajes</button>
+        </div>
+        <p class="card-text">Personaje que interpreta: {{character.nombre_personaje}}</p>
+        <p class="card-text"><small class="text-muted">Numero de episodios: {{ character.episodios }}</small></p>
+
+        <button class="botoncito border-0" [routerLink]="['/serie', character.serie]">{{serieName}}</button>
+      </div>
+    </div>
+  </div>
+</div>

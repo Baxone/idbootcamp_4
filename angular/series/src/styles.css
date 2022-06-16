@@ -5,6 +5,7 @@
   --primaryColor: #5f42e7;
   --secondaryColor: black;
   --bgColor: #232323;
+  --fontSize: 1em;
 }
 
 html{
@@ -13,4 +14,20 @@ html{
 
 body{
  font-family: var(--fontFamily) !important;
+ font-size: var(--fontSize);
+}
+
+.botoncito{
+  text-decoration: none;
+  color: white;
+  background-color: var(--primaryColor);
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+   margin-left: 20px;
+   transition: 1s;
+}
+
+.botoncito:hover{
+  background-color: darkslateblue;
 }

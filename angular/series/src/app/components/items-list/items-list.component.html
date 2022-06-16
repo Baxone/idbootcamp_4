@@ -1,0 +1,16 @@
+<div class="title">
+  <h5 class="text-white fs-6 fw-bold">{{ title.toUpperCase() }}</h5>
+  <hr class="bg-light">
+</div>
+
+<div class="row g-4" *ngIf="title === 'series'">
+  <article class="col-12 col-md-4 col-xl-3 " *ngFor="let serie of arrSeries">
+    <app-card [item]="serie" [cat]="title"></app-card>
+  </article>
+</div>
+
+<div class="row g-4" *ngIf="title === 'personajes'">
+  <article class="col-12 col-md-4 col-xl-3 " *ngFor="let character of arrCharacters">
+    <app-card [item]="character" [cat]="title"></app-card>
+  </article>
+</div>

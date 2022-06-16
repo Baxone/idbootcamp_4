@@ -1,0 +1,19 @@
+<!--  serie -->
+<div [ngSwitch]="cat">
+  <figure *ngSwitchCase="'series'">
+    <div class="myCardimg" [style]=" 'background-image: url('+ miSerie.imagen +')'"></div>
+    <div class="degradado">
+      <figcaption>{{miSerie.titulo}}</figcaption>
+      <a [routerLink]="['/serie', miSerie.id]">Detalle</a>
+    </div>
+  </figure>
+
+  <figure *ngSwitchCase="'personajes'">
+    <div class="myCardimg" [style]=" 'background-image: url('+ miCharacter.imagen +')'"></div>
+    <div class="degradado">
+      <figcaption>{{miCharacter.nombre_real}}</figcaption>
+      <a [routerLink]="['/personaje', miCharacter.id]">Detalle</a>
+    </div>
+  </figure>
+</div>
+<!-- personaje -->
