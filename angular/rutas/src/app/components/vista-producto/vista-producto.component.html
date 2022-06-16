@@ -7,6 +7,11 @@
     <li>Precio: {{producto.price}}</li>
     <li>Stock: {{producto.stock}}</li>
   </ul>
-  <hr>
   <button class="btn btn-success" [routerLink]="['/productos']">Volver a listado</button>
+  <hr>
+  <div>
+    <button class="btn btn-warning me-5" [routerLink]="['/producto', producto.id, 'caracteristicas']">Caracteristicas</button><button [routerLink]="['/producto', producto.id, 'opiniones']" class="btn btn-warning">Opiniones</button>
+    <hr>
+    <router-outlet></router-outlet>
+  </div>
 </section>

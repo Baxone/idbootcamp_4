@@ -16,6 +16,8 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { VistaProductoComponent } from './components/vista-producto/vista-producto.component';
 import { VistaServicioComponent } from './components/vista-servicio/vista-servicio.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { CaracteristicasComponent } from './components/vista-producto/caracteristicas/caracteristicas.component';
+import { OpinionesComponent } from './components/vista-producto/opiniones/opiniones.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     VistaProductoComponent,
     VistaServicioComponent,
     ProductFormComponent,
+    CaracteristicasComponent,
+    OpinionesComponent,
 
   ],
   imports: [
