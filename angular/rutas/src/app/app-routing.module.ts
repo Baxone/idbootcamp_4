@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'producto/:idproduct', component: VistaProductoComponent, children: [
       { path: '', pathMatch: "full", redirectTo: "caracteristicas" },
+
       { path: 'caracteristicas', component: CaracteristicasComponent },
       { path: 'opiniones', component: OpinionesComponent }
     ]
