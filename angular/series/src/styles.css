@@ -8,6 +8,13 @@
   --fontSize: 1em;
 }
 
+img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 html{
   background-color: var(--bgColor);
 }

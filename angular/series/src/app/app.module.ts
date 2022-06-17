@@ -9,6 +9,8 @@ import { ItemsListComponent } from './components/items-list/items-list.component
 import { CardComponent } from './components/card/card.component';
 import { CharacterViewComponent } from './components/character-view/character-view.component';
 import { SerieViewComponent } from './components/serie-view/serie-view.component';
+import { PersonajesComponent } from './components/serie-view/personajes/personajes.component';
+import { TemporadasComponent } from './components/serie-view/temporadas/temporadas.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SerieViewComponent } from './components/serie-view/serie-view.component
     CardComponent,
     CharacterViewComponent,
     SerieViewComponent,
+    PersonajesComponent,
+    TemporadasComponent,
 
   ],
   imports: [

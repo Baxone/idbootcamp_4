@@ -16,7 +16,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.cat === 'series') {
+    if (this.cat === 'series' || this.cat === 'canal') {
       this.miSerie = this.item
     } else {
       this.miCharacter = this.item

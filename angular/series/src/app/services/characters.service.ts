@@ -37,5 +37,19 @@ export class CharactersService {
     return this.arrCharacters.find(character => character.id === pId);
   }
 
+  /**
+     * @memberof CharactersService
+     * @author idBootcamps
+     * @date 16/06/2022
+     * @function getBySerieId()
+     * @description Devuelve un personaje por id
+     * @param {string} pId
+     * @returns {*}  {Character[]}
+   */
+  getBySerieId(pId: string): Character[] {
+    let idSerie = parseInt(pId);
+    return this.arrCharacters.filter(character => character.serie === idSerie);
+  }
+
 
 }

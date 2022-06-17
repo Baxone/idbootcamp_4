@@ -6,11 +6,10 @@
     <li class="nav-item" [routerLink]="['/personajes']">
       Personajes
     </li>
-    <li>
-      <select class="form-select">
-        <option value="">Todas las cadenas</option>
-        <option value="">HBO</option>
-        <option value="">NETFLIX</option>
+    <li *ngIf="activate">
+      <select class="form-select" (change)="getChannel($event)">
+        <option value="all">Todas las cadenas</option>
+        <option *ngFor="let channel of arrChannels" [value]="channel">{{channel}}</option>
       </select>
     </li>
   </ul>

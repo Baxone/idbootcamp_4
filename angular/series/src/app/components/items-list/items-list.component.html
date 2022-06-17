@@ -1,9 +1,9 @@
 <div class="title">
-  <h5 class="text-white fs-6 fw-bold">{{ title.toUpperCase() }}</h5>
+  <h5 class="text-white fs-6 fw-bold">{{ title.toUpperCase() }} {{channel.toUpperCase()}} </h5>
   <hr class="bg-light">
 </div>
 
-<div class="row g-4" *ngIf="title === 'series'">
+<div class="row g-4" *ngIf="title === 'series' || title === 'canal'">
   <article class="col-12 col-md-4 col-xl-3 " *ngFor="let serie of arrSeries">
     <app-card [item]="serie" [cat]="title"></app-card>
   </article>
