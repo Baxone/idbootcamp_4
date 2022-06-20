@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,16 @@ export class UsersService {
     //http devuelve siempre un observable, lo convertimos a promesa con el metodo lastValueFrom()
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
+
+  delete(pId: number): Promise<any> {
+    return lastValueFrom(this.httpClient.delete<any>(this.baseUrl + pId))
+  }
+
+
+  create(pForm: any): Promise<User> {
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, pForm))
+  }
+
+
 
 }
