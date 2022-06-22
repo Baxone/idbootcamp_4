@@ -1,0 +1,49 @@
+<p>{{ nombre | uppercase }} - {{nombre}}</p>
+<p>{{ nombre | lowercase }} - {{nombre}}</p>
+<p>{{ 'jony hernandez' | titlecase }} - {{'jony hernandez'}}</p>
+<p>{{ iva | percent }} - {{iva}}</p>
+<p>{{ porcentaje | percent: '2.2-5' }}</p>
+<!-- minNumeroEnteros. minNumeroDecimales - maxNumeroDecimales -->
+<p>{{ arrayNumeros | json }}</p> <!-- pipe de depuracion -->
+<p>{{ precio | currency: 'GBP' }}</p>
+<p>{{ fecha | date: 'EEEE: dd-MMM-yyyy' | uppercase }}</p>
+<p>{{ birthday | date: 'dd-MM' }}</p>
+
+<!--
+
+  Formato     Equivale              Salida
+----------  --------------------  --------------------------------
+short       M/d/yy h:mm a         6/15/15 9:03 AM
+medium      MMM d y h:mm:ss a     Jun 15 2015 9:03:01 AM
+long        MMMM d y h:mm:ss a z  June 15 2015 at 9:03:01 AM GMT+1
+shortDate   M/d/yy                6/15/15
+mediumDate  MMM d y               Jun 15 2015
+longDate    MMMM d y              June 15 2015
+fullDate    EEEE MMMM d y         Monday June 15 2015
+shortTime   h:mm a                9:03 AM
+mediumTime  h:mm:ss a             9:03:01 AM
+longTime    h:mm:ss a z           9:03:01 AM GMT+1
+fullTime    h:mm:ss a zzzz        9:03:01 AM GMT+01:00
+full        EEEE MMMM d y         Monday June 15 2015
+            h:mm:ss a zzzz        at 9:03:01 AM GMT+01:00
+-->
+
+<p>{{racional | number: '1.1-2' }}</p>
+<input type="range" value="0" min="0" [max]="arrAnimales.length" (input)="cambiarLong($event)">
+<p>{{ arrAnimales | slice: inicio: maximo }}</p>
+<hr>
+
+<p> {{ 'texto en minuscula' | vuelta }}</p>
+
+<article>
+  <h2>Titulo del la noticia</h2>
+  <p>{{ texto | recortarStrings : 30: '***' }}</p>
+  <button>Leer mas</button>
+</article>
+
+<!-- recortarString , lo recorte a 20 caracteres y me añada puntos ...-->
+
+<!-- formateador, eligir color texto, negrita, mayusculas o minisculas, ojo los argumentos no tiene que ser obligatorios
+-->
+
+<p [innerHTML]="texto | formateador: 'tomato': 'bold': 'lowercase' "></p>

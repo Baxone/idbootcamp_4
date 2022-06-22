@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       const response: User | any = await this.usersService.login(pForm.value)
       console.log(response);
       if (response.token) {
+        localStorage.setItem('user-token', response.token)
         this.router.navigate(['/premio', response.token])
       }
       else {
