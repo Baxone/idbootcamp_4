@@ -1,0 +1,13 @@
+<section class="container mt-4">
+  <h2>Lista de personajes</h2>
+  <hr>
+  <div class="row">
+    <article class="col-12 col-md-6 " [ngClass]="{'col-lg-4': !ultimo, 'col-lg': ultimo }" *ngFor="let personaje of arrPersonajes; let ultimo= last">
+      <app-tarjeta-personaje [miPersonaje]="personaje"></app-tarjeta-personaje>
+    </article>
+  </div>
+  <div class="d-flex justify-content-around mb-5">
+    <button class="btn btn-danger" [disabled]="prev === null" (click)="gotoPage(prev)">PREV</button>
+    <button class="btn btn-danger" [disabled]="next === null" (click)="gotoPage(next)">NEXT</button>
+  </div>
+</section>

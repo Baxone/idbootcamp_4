@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Ricky Morty</a>
+    <form #buscador="ngForm" (ngSubmit)="getSearch(buscador)" class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscar" name="search" ngModel>
+      <button class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#modal" [disabled]="buscador.value.search === ''">Buscar</button>
+    </form>
+  </div>
+</nav>
+<app-modal-personaje [miBusqueda]="busqueda"></app-modal-personaje>
