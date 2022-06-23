@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <section class="row g-3" data-masonry='{"percentPosition": true }'>
+
+    <article class="col-12 col-md-6 col-lg-4" *ngFor="let character of arrCharacters">
+      <app-character-card [myCharacter]="character"></app-character-card>
+    </article>
+
+  </section>
+</div>

@@ -1,0 +1,14 @@
+<h1>Gestion con observables</h1>
+<ul>
+  <li *ngFor="let post of arrPost | async">
+    {{post.id}} - {{post.title}}
+  </li>
+</ul>
+
+<hr>
+<h1>Gestion con promises</h1>
+<ul>
+  <li *ngFor="let post of arrPostPromises | async">
+    {{post.id}} - {{post.title}}
+  </li>
+</ul>

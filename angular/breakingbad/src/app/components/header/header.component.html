@@ -1,0 +1,11 @@
+<nav class="navbar navbar-dark bg-warning border-3 border-bottom border-dark shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/2560px-Breaking_Bad_logo.svg.png">
+    </a>
+    <div class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscador por nombre" [(ngModel)]="searchName">
+      <button class="btn btn-success" type="submit" (click)="search()">Buscar</button>
+    </div>
+  </div>
+</nav>

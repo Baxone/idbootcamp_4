@@ -7,13 +7,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul>
-
+        <ul *ngIf="arrPersonajes.length !== 0">
           <li class="mb-1" *ngFor="let personaje of arrPersonajes">
             <img [src]="personaje.image" class="imagencita">
             {{personaje.name}}
           </li>
         </ul>
+        <p *ngIf="arrPersonajes.length === 0">
+          {{results}}
+        </p>
       </div>
     </div>
   </div>

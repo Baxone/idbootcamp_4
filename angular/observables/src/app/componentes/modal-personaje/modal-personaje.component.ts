@@ -12,6 +12,7 @@ export class ModalPersonajeComponent implements OnInit {
   @Input() miBusqueda: string = ""
 
   arrPersonajes: Personaje[] = [];
+  results: any;
   constructor(private personajesService: PersonajesService) { }
 
   ngOnInit(): void {
@@ -20,9 +21,17 @@ export class ModalPersonajeComponent implements OnInit {
 
   ngOnChanges(): void {
     //cuando carguemos el componente tenemos que hacer una peticion a la api para hacer una busqueda por nombre. getByName que es un observable dentro del servicio
-    this.personajesService.getByName(this.miBusqueda).subscribe((data: any) => {
-      this.arrPersonajes = data.results;
-    })
+    const miObservador = {
+      next: (data: any) => { this.arrPersonajes = data.results },
+      error: (error: any) => {
+        this.arrPersonajes = [];
+        this.results = error.error.error
+      }
+    }
+
+    this.personajesService.getByName(this.miBusqueda).subscribe(miObservador)
+
+
 
   }
 

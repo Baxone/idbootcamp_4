@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class PersonajesService {
   }
 
   getByName(pSearch: string): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl + '?name=' + pSearch)
+    return this.httpClient.get<any>(this.baseUrl + '?name=' + pSearch);
   }
 
 }
