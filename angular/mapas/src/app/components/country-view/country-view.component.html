@@ -1,1 +1,26 @@
-<p>country-view works!</p>
+<section class="pt-5 mt-3 container">
+  <h1>Nombre del pais</h1>
+  <hr>
+  <div class="row">
+    <figure class="col-12 col-md-3">
+      <img class="img-fluid shadow" [src]="myCountry?.flags.svg">
+    </figure>
+    <div class="col-12 col-md-9">
+      <ul class="list-group">
+        <li class="list-group-item">
+          Población: {{ myCountry?.population | number }}
+        </li>
+        <li class="list-group-item">
+          Moneda: {{ myCountry?.currencies | moneda }}
+        </li>
+        <li class="list-group-item">
+          Superficie: {{ myCountry?.area }} km<sup>2</sup>
+        </li>
+        <li class="list-group-item">
+          Capital: {{ myCountry?.capital }}
+        </li>
+        <h5 class="text-muted" *ngIf="myCountry?.unMember">Este pais pertenece a la unión europa</h5>
+      </ul>
+    </div>
+  </div>
+</section>

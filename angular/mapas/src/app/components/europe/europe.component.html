@@ -1,1 +1,23 @@
-<p>europe works!</p>
+<section>
+  <agm-map [zoom]="5" [latitude]="lat" [longitude]="long">
+
+    <agm-marker *ngFor="let country of arrCountries" [latitude]="country?.capitalInfo.latlng[0]" [longitude]="country?.capitalInfo.latlng[1]" [iconUrl]="$any({url: country?.flags.png  , scaledSize: {width: 30, height: 20}})">
+
+      <agm-info-window>
+        <div class="p-3">
+          <h4><img [src]="country?.flags.png" class="icon"> | {{country?.name.common}}</h4>
+          <hr>
+          <ul>
+            <li>Capital: {{ country?.capital }}</li>
+            <li>Moneda: {{ country?.currencies | moneda }}</li>
+          </ul>
+          <button class="btn btn-danger btn-sm" [routerLink]="['/country', country?.cca2]">Ver detalle</button>
+        </div>
+
+      </agm-info-window>
+
+    </agm-marker>
+
+  </agm-map>
+
+</section>

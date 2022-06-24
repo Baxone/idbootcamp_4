@@ -4,8 +4,17 @@
   <div class="card mapa">
 
     <agm-map [latitude]="lat" [longitude]="long" [zoom]="11">
-      <agm-marker [latitude]="lat" [longitude]="long" [iconUrl]="$any({url: 'https://c.tenor.com/drxH1lO9cfEAAAAi/dark-souls-bonfire.gif', scaledSize: { width: 40, height: 40 } })"></agm-marker>
+      <agm-marker [latitude]="lat" [longitude]="long" [iconUrl]="$any({url: 'https://c.tenor.com/drxH1lO9cfEAAAAi/dark-souls-bonfire.gif', scaledSize: { width: 40, height: 40 } })">
 
+        <agm-info-window>
+          <h5>La casa del profe</h5>
+          <hr>
+          <p>Alguna información</p>
+          <a href="http://www.google.es" class="link">Google</a>
+          <a class="btn btn-secondary btn-sm" [routerLink]="['/europe']">Paises de europa</a>
+        </agm-info-window>
+
+      </agm-marker>
     </agm-map>
 
 
