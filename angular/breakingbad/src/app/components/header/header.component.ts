@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
 
   search() {
     //crear la queryParams y redirigir a ella.
-    this.router.navigateByUrl(`/home?name=${this.searchName}`)
+    let url = (this.searchName !== "") ? `/home?name=${this.searchName}` : '/home'
+    this.router.navigateByUrl(url)
   }
 
 }

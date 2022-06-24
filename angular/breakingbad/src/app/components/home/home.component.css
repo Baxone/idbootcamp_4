@@ -1,0 +1,25 @@
+article{
+  cursor: pointer;
+}
+
+section{
+  column-count: 1;
+}
+
+section article{
+  margin-bottom: 20px;
+}
+
+@media(min-width: 768px ){
+  section{
+    column-count: 2;
+  }
+}
+
+@media(min-width: 992px ){
+  section{
+    column-count: 3;
+  }
+}
+
+

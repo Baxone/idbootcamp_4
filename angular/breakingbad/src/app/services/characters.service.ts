@@ -20,4 +20,8 @@ export class CharactersService {
     return this.httpClient.get<Character[]>(this.baseUrl + pId);
   }
 
+
+  getByName(pName: string): Promise<Character[]> {
+    return lastValueFrom(this.httpClient.get<Character[]>(`${this.baseUrl}?name=${pName}`))
+  }
 }

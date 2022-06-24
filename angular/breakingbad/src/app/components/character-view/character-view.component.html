@@ -1,1 +1,22 @@
-<p>character-view works!</p>
+<section class="container mt-5" *ngFor="let character of myCharacter | async">
+  <div class="row">
+    <figure class="col-12 col-md-3">
+      <img class="img-fluid" [src]="character?.img" [alt]="character?.name">
+    </figure>
+    <div class="col-12 col-md-9">
+      <h3>{{ character?.name }}</h3>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Nick: {{character?.nickname}}
+        </li>
+        <li class="list-group-item">
+          Estado: {{character?.status}}
+        </li>
+        <li class="list-group-item">
+          Ocupación: {{ character?.occupation }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
