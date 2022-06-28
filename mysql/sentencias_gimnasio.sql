@@ -131,7 +131,79 @@ group by cuota;
 select p.id, p.nombre, count(c.id) as num_clientes
 from profesores p, clientes c
 where p.id = c.profesor_id
-group by c.profesor_id;
+group by c.profesor_id
+order by num_clientes desc;
+
+-- GROUP_CONCAT
+
+SELECT p.nombre, p.experiencia, GROUP_CONCAT(c.nombre SEPARATOR '|') AS clientes
+FROM clientes c, profesores p
+WHERE c.profesor_id = p.id
+GROUP BY c.profesor_id;
+
+-- CONCAT
+
+select nombre, apellidos, concat(nombre, " ", apellidos) as nombre_completo
+from clientes;
+
+-- BETWEEN
+
+select *
+from clientes 
+where edad not between 40 and 50;
+
+-- LIKE
+
+select * 
+from clientes
+where nombre like '%l';
+
+select *
+from clientes 
+where apellidos like 'h%z';
+
+select * from clientes
+where nombre like '__r%';
+
+
+-- JOIN
+
+
+select c.nombre, c.apellidos, ce.repeticiones, 
+ce.duracion, e.nombre as nombre_ejercicio
+from clientes_has_ejercicios ce
+inner join clientes c on ce.cliente_id = c.id
+inner join ejercicios e on ce.ejercicio_id = e.id;
+
+-- Nombre y apellidos del cliente con un listado de sus ejercicios
+-- separados por comas
+-- y nombre del profesor que lo supervisa
+
+select c.nombre, c.apellidos, group_concat(e.nombre) as ejercicios,
+p.nombre as nombre_profesor
+from clientes c
+inner join clientes_has_ejercicios ce on c.id = ce.cliente_id
+inner join ejercicios e on ce.ejercicio_id = e.id
+inner join profesores p on c.profesor_id = p.id
+group by c.id;
+
+-- Listado de clientes y el número de repeticiones que 
+-- tienen que hacer al ir gimnasio
+
+select c.nombre, c.apellidos, sum(ce.repeticiones) 
+from clientes c
+inner join clientes_has_ejercicios ce on c.id = ce.cliente_id
+group by c.id;
+
+select * from clientes_has_ejercicios;
+
+-- Lista de profesores con sus clientes separados por coma
+-- solo aquellos profesores que tengan clientes
+
+select p.nombre, group_concat(c.nombre)
+from profesores p
+inner join clientes c on p.id = c.profesor_id
+group by p.id;
 
 
 
