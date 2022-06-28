@@ -11,10 +11,12 @@ group by s.id;
 -- si no está cursando nada, también debe aparecer en la lista
 -- JOIN, GROUP_CONCAT, SUBCONSULTA
 
-select a.id, a.nombre, a.matricula, ma.*
+select a.id, a.nombre, a.matricula, group_concat(m.titulo)
 from alumnos a
 left join materias_alumnos ma on a.id = ma.alumno_id
-where a.sede_id = (select id from sedes where nombre = 'sede 1');
+left join materias m on ma.materia_id = m.id
+where a.sede_id = (select id from sedes where nombre = 'sede 1')
+group by a.id;
 
 
 
@@ -27,3 +29,14 @@ where a.sede_id = (select id from sedes where nombre = 'sede 1');
 
 -- Lista de materias con la cantidad de alumnos de cada una de ellas
 -- y el cálculo de la nota media de dichos alumnos
+
+select m.titulo, count(ma.alumno_id) 
+from materias m
+left join materias_alumnos ma on m.id = ma.materia_id
+group by m.id;
+
+
+
+
+
+
