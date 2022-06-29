@@ -1,0 +1,7 @@
+GET http://localhost:3200
+
+###
+POST http://localhost:3000/new
+
+###
+PUT http://localhost:3000/edit

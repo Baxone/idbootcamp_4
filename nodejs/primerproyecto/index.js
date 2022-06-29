@@ -19,3 +19,8 @@ console.log(resultado);
 
 const pers = new Persona('Mario', 'Girón', 32);
 console.log(pers);
+
+console.log(__dirname);
+console.log(__filename);
+
+console.log(process.argv);
