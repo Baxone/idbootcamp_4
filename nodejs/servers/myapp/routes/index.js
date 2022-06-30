@@ -10,4 +10,8 @@ router.post('/contacto', (req, res) => {
   res.end('Respondo al POST de /contacto');
 });
 
+router.put('/edit', (req, res) => {
+  res.end('Edición general');
+});
+
 module.exports = router;

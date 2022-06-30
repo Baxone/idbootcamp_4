@@ -4,4 +4,12 @@ router.get('/by-id', (req, res) => {
     res.end('Recuperamos el producto por ID');
 });
 
+router.get('/all', (req, res) => {
+    res.end('Recupero todos los productos');
+});
+
+router.post('/create/new', (req, res) => {
+    res.end('Creamos un nuevo producto');
+});
+
 module.exports = router;

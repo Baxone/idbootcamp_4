@@ -10,4 +10,8 @@ router.put('/edit/form', (req, res) => {
   res.send('Editamos el usuario lilillelele');
 });
 
+router.delete('/borrar/all', (req, res) => {
+  res.end('Borramos todos los usuarios');
+});
+
 module.exports = router;
