@@ -1,0 +1,33 @@
+POST http://localhost:3000/contacto
+
+###
+DELETE http://localhost:3000/personas/remove
+
+###
+GET http://localhost:3000/products/by-id
+
+###
+PUT http://localhost:3000/users/edit/form
+
+### NUEVAS
+GET http://localhost:3000/products/all
+
+###
+DELETE http://localhost:3000/users/borrar/all
+
+###
+PUT http://localhost:3000/dashboard/personas/edit
+
+###
+POST http://localhost:3000/products/create/new
+
+###
+GET http://localhost:3000/dashboard/personas
+
+###
+POST http://localhost:3000/dashboard/products/create
+
+###
+PUT http://localhost:3000/edit
+
+###

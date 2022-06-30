@@ -6,4 +6,8 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
+router.put('/edit/form', (req, res) => {
+  res.send('Editamos el usuario lilillelele');
+});
+
 module.exports = router;
