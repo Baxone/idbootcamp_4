@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const dayjs = require('dayjs');
+const fs = require('fs');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -21,6 +23,48 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * INICIO MIDDLEWARES
+ */
+
+app.use((req, res, next) => {
+  const currentDate = dayjs().format('DD/MM/YYYY 🥰 HH:mm');
+  console.log(currentDate);
+  next();
+});
+
+// Generamos dentro del middleware un número aleatorio. Si el número es mayor de 0.6 respondemos con un error. Si no, seguimos al siguiente manejador
+
+app.use((req, res, next) => {
+  const randomNum = Math.random();
+  if (randomNum > 0.6) {
+    res.end('El número es mayor de 0.6');
+  } else {
+    next();
+  }
+});
+
+// Escriba en un fichero (logs/main.log) la siguiente línea:
+// [FECHA] Método. Url
+// [30-06-2022 15:06] Método: GET. Url: /dashboard/personas
+// - appendFile de la librería fs
+// El método y la url lo obtenemos del objeto req
+// Cuando escribamos en el fichero, llamamos a next!
+app.use((req, res, next) => {
+  const content = `[${dayjs().format('DD-MM-YYYY HH:mm')}] Método: ${req.method}. Url: ${req.url}\n`;
+
+  fs.appendFile('./logs/main.log', content, (err) => {
+    next();
+  });
+});
+
+
+// TODO: Descargar Postman
+
+/**
+ * FIN MIDDLEWARES
+ */
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

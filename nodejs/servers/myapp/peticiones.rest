@@ -1,4 +1,4 @@
-POST http://localhost:3000/contacto
+GET http://localhost:3000/users
 
 ###
 DELETE http://localhost:3000/personas/remove
@@ -15,11 +15,22 @@ GET http://localhost:3000/products/all
 ###
 DELETE http://localhost:3000/users/borrar/all
 
-###
-PUT http://localhost:3000/dashboard/personas/edit
 
 ###
 POST http://localhost:3000/products/create/new
+Content-Type: application/json
+
+{
+    "nombre": "lápiz rojo",
+    "precio": 12,
+    "departamento": "papelería"
+}
+
+###
+PUT http://localhost:3000/edit
+
+###
+PUT http://localhost:3000/dashboard/personas/edit
 
 ###
 GET http://localhost:3000/dashboard/personas
@@ -28,6 +39,4 @@ GET http://localhost:3000/dashboard/personas
 POST http://localhost:3000/dashboard/products/create
 
 ###
-PUT http://localhost:3000/edit
-
-###
+GET http://localhost:3000/dashboard/products/344423

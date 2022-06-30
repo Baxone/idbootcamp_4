@@ -40,3 +40,27 @@ POST /clientes/create
 GET /clientes/edit
 POST /clientes/update
 GET /clientes/delete
+
+GET /api/clientes
+POST /api/clientes
+PUT /api/clientes/:clienteId
+DELETE /api/clientes/:clienteId
+
+GET /api/profesores
+POST /api/profesores
+PUT /api/profesores/:profesorId
+DELETE /api/profesores/:profesorId
+
+
+
+
+GET /dashboard/products/45623
+
+GET /personas/34144134
+
+GET /aviones/Madrid-Berlin
+
+POST /documentos/curriculum.pdf
+POST /documentos/curriculum.txt
+POST /documentos/notas.pdf
+    /documentos/:nombre.:extension

@@ -9,6 +9,7 @@ router.get('/all', (req, res) => {
 });
 
 router.post('/create/new', (req, res) => {
+    console.log(req.body);
     res.end('Creamos un nuevo producto');
 });
 

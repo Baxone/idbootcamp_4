@@ -5,6 +5,11 @@ router.get('/new', (req, res) => {
     res.end('Petición GET sobre /personas/new');
 });
 
+router.get('/:personaId', (req, res) => {
+    console.log(req.params.personaId);
+    res.end('Recupero la persona por ID');
+});
+
 // PUT localhost:3000/personas/edit
 router.put('/edit', (req, res) => {
     res.end('Petición PUT sobre /personas/edit');

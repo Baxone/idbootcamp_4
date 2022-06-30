@@ -3,7 +3,12 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+  const personas = [
+    { nombre: 'Rodrigo', apellidos: 'Gómez' },
+    { nombre: 'Inés', apellidos: 'García' },
+    { nombre: 'Laura', apellidos: 'López' }
+  ]
+  res.json(personas);
 });
 
 router.put('/edit/form', (req, res) => {
