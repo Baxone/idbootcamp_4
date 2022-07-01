@@ -15,8 +15,13 @@ connection.connect((err) => {
     //     console.log(result);
     // });
 
-    connection.query('update clientes set edad = 43 where id = 99', (err, result) => {
+    const edad = 34;
+    const id = 99;
+
+    connection.query('update clientes set edad = ? where id = ?', [edad, id], (err, result) => {
         console.log(err);
         console.log(result);
-    })
+
+        connection.destroy();
+    });
 });

@@ -1,8 +1,27 @@
 const router = require('express').Router();
 
+const Cliente = require('../../models/cliente.model');
+
+
+
+
+
 router.get('/', (req, res) => {
-    res.end('Petición GET clientes');
+    Cliente.getAll()
+        .then(result => res.json(result))
+        .catch(err => console.log(err));
 });
+
+
+
+
+
+
+
+
+
+
+
 
 router.post('/', (req, res) => {
     res.end('Petición POST clientes');
