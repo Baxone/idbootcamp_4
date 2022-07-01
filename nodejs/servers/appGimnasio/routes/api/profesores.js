@@ -1,11 +1,22 @@
 const router = require('express').Router();
 
+const Profesor = require('../../models/profesor.model');
+
 router.get('/', (req, res) => {
-    res.end('Petición GET profesores');
+    Profesor.getAll()
+        .then(result => res.json(result))
+        .catch(err => res.json({ error: err.message }));
 });
 
 router.post('/', (req, res) => {
-    res.end('Petición POST profesores');
+    Profesor.create(req.body)
+        .then(result => {
+            res.json(result);
+            // - Tengo el ID en result.insertId
+            // - Generar un método en el modelo getById
+            // - Recibe el id del nuevo profesor y retorna sus datos
+        })
+        .catch(err => res.json({ error: err.message }));
 });
 
 router.put('/', (req, res) => {

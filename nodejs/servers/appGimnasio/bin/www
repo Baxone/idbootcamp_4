@@ -8,6 +8,9 @@ var app = require('../app');
 var debug = require('debug')('appgimnasio:server');
 var http = require('http');
 
+// Configuración de .env
+require('dotenv').config();
+
 // Configuración de la BD
 require('../config/db');
 
