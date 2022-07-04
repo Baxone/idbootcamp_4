@@ -8,6 +8,14 @@ const getById = (clienteId) => {
     return executeQueryOne('select * from clientes where id = ?', [clienteId]);
 }
 
+const getByGenero = (genero) => {
+    return executeQuery('select * from clientes where genero = ?', [genero]);
+}
+
+const getByNombre = (nombre) => {
+    return executeQuery('select * from clientes where nombre like ?', [`%${nombre}%`]);
+}
+
 const create = ({ nombre, apellidos, direccion, email, edad, genero, cuota, fecha_nacimiento, dni }) => {
     return executeQuery(
         'insert into clientes (nombre, apellidos, direccion, email, edad, genero, cuota, fecha_nacimiento, dni) values (?,?,?,?,?,?,?,?,?)',
@@ -32,5 +40,5 @@ const update = (clienteId, { nombre, apellidos, direccion, email, edad, genero, 
 
 
 module.exports = {
-    getAll, create, getById, deleteById, getByEdad, update
+    getAll, create, getById, deleteById, getByEdad, update, getByGenero, getByNombre
 }

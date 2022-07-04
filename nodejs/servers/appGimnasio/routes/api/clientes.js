@@ -31,6 +31,22 @@ router.get('/edad/:edadSeleccionada', (req, res) => {
         .catch(err => res.json({ error: err.message }))
 });
 
+router.get('/genero/:tipo', (req, res) => {
+    const { tipo } = req.params;
+
+    Cliente.getByGenero(tipo)
+        .then(result => res.json(result))
+        .catch(err => res.json({ error: err.message }));
+});
+
+router.get('/nombre/:texto', (req, res) => {
+    const { texto } = req.params;
+
+    Cliente.getByNombre(texto)
+        .then(result => res.json(result))
+        .catch(err => res.json({ error: err.message }));
+});
+
 router.post('/', async (req, res) => {
     try {
         const result = await Cliente.create(req.body)
@@ -40,18 +56,6 @@ router.post('/', async (req, res) => {
         res.json({ error: err.message });
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 router.put('/:clienteId', (req, res) => {
     // ¿Qué valores tengo para trabajar?
@@ -64,18 +68,6 @@ router.put('/:clienteId', (req, res) => {
         .then(result => res.json(result))
         .catch(err => res.json(err.message));
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // DELETE http://localhost:3000/api/clientes/78
 router.delete('/:clienteId', (req, res) => {

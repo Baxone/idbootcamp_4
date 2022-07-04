@@ -1,0 +1,12 @@
+<h2>Lista de clientes</h2>
+<div class="container">
+    <div class="clientes">
+        <div class="cliente" *ngFor="let cliente of arrClientes">
+            <h4>{{cliente.nombre}} {{cliente.apellidos}}</h4>
+            <p>Dirección: {{cliente.direccion}}</p>
+            <p>Email: {{cliente.email}}</p>
+            <p>Fecha Inscripción: {{cliente.fecha_inscripcion | date:'dd-MM-YYYY HH:mm'}}</p>
+            <p>Profesor: {{cliente.profesor.nombre}}</p>
+        </div>
+    </div>
+</div>

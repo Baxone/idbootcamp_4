@@ -8,6 +8,10 @@ const getById = (profesorId) => {
     return executeQueryOne('select * from profesores where id = ?', [profesorId]);
 }
 
+const getByExperiencia = (min, max) => {
+    return executeQuery('select * from profesores where experiencia between ? and ? order by experiencia asc', [min, max]);
+}
+
 const create = ({ nombre, experiencia }) => {
     return executeQuery('insert into profesores (nombre, experiencia) values (?, ?)', [nombre, experiencia]);
 }
@@ -23,4 +27,6 @@ const update = (profesorId, { nombre, experiencia }) => {
     );
 }
 
-module.exports = { getAll, create, getById, deleteById, update };
+module.exports = {
+    getAll, create, getById, deleteById, update, getByExperiencia
+};
