@@ -1,25 +1,26 @@
+const { executeQuery, executeQueryOne } = require('../helpers/utils');
+
 const getAll = () => {
-    return new Promise((resolve, reject) => {
-        db.query('select * from profesores', (err, result) => {
-            if (err) return reject(err);
-            resolve(result);
-        })
-    });
+    return executeQuery('select * from profesores');
+}
+
+const getById = (profesorId) => {
+    return executeQueryOne('select * from profesores where id = ?', [profesorId]);
 }
 
 const create = ({ nombre, experiencia }) => {
-    return new Promise((resolve, reject) => {
-        db.query(
-            'insert into profesores (nombre, experiencia) values (?, ?)',
-            [nombre, experiencia],
-            (err, result) => {
-                if (err) return reject(err);
-                resolve(result);
-            }
-        )
-    });
+    return executeQuery('insert into profesores (nombre, experiencia) values (?, ?)', [nombre, experiencia]);
 }
 
-// executeQuery
+const deleteById = (profesorId) => {
+    return executeQuery('delete from profesores where id = ?', [profesorId]);
+}
 
-module.exports = { getAll, create };
+const update = (profesorId, { nombre, experiencia }) => {
+    return executeQuery(
+        'update profesores set nombre = ?, experiencia = ? where id = ?',
+        [nombre, experiencia, profesorId]
+    );
+}
+
+module.exports = { getAll, create, getById, deleteById, update };

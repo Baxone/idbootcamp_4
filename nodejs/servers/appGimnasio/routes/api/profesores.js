@@ -8,23 +8,40 @@ router.get('/', (req, res) => {
         .catch(err => res.json({ error: err.message }));
 });
 
-router.post('/', (req, res) => {
-    Profesor.create(req.body)
-        .then(result => {
-            res.json(result);
-            // - Tengo el ID en result.insertId
-            // - Generar un método en el modelo getById
-            // - Recibe el id del nuevo profesor y retorna sus datos
-        })
+router.post('/', async (req, res) => {
+    const result = await Profesor.create(req.body);
+    const profesor = await Profesor.getById(result.insertId);
+    res.json(profesor);
+});
+
+
+
+
+
+
+
+
+router.put('/:profesorId', (req, res) => {
+    const { profesorId } = req.params;
+
+    Profesor.update(profesorId, req.body)
+        .then(result => res.json(result))
         .catch(err => res.json({ error: err.message }));
 });
 
-router.put('/', (req, res) => {
-    res.end('Petición PUT profesores');
-});
 
-router.delete('/', (req, res) => {
-    res.end('Petición DELETE profesores');
+
+
+
+
+
+
+
+
+router.delete('/:profesorId', (req, res) => {
+    Profesor.deleteById(req.params.profesorId)
+        .then(result => res.json({ success: 'Se ha borrado el profesor' }))
+        .catch(err => res.json({ error: err.message }));
 });
 
 module.exports = router;
