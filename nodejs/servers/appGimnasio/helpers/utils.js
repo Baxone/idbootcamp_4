@@ -1,3 +1,6 @@
+const dayjs = require('dayjs');
+const jwt = require('jsonwebtoken');
+
 function executeQuery(sql, values = []) {
     return new Promise((resolve, reject) => {
         db.query(sql, values, (err, result) => {
@@ -18,6 +21,15 @@ function executeQueryOne(sql, values = []) {
     });
 }
 
+function createToken(user) {
+    const obj = {
+        userId: user.id,
+        expDate: dayjs().add(5, 'minutes').unix()
+    }
+    return jwt.sign(obj, 'en un lugar de la mancha');
+}
+
+
 module.exports = {
-    executeQuery, executeQueryOne
+    executeQuery, executeQueryOne, createToken
 }

@@ -34,3 +34,12 @@ GET /api/clientes/nombre/John
 - Crear servicio ClientesService
     - Función que recupere todos los clientes
         - Se ejecuta desde ListaClientesComponent
+
+
+# REGISTRO
+
+- Generar el modelo para los usuarios
+- Dentro del modelo generamos la función create
+    - SQL insert
+    - El método create recibe como parámetro un objeto con username, password, email
+- Dentro del manejador para el registro llamamos al método pasándole aquellos datos que recibimos en el req.body

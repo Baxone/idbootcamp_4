@@ -1,4 +1,5 @@
 GET http://localhost:3000/api/clientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImV4cERhdGUiOjE2NTcwMzU5MzgsImlhdCI6MTY1NzAzNTYzOH0.5Lj3yZ4Sga2VsYLjKvRi4QUqeAYpQ6XZJJX2CX6Ev9I
 
 ###
 POST http://localhost:3000/api/clientes
@@ -61,3 +62,28 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/clientes/genero/f
+
+###
+GET http://localhost:3000/api/profesores/min/10/max/9
+
+###
+GET http://localhost:3000/api/clientes/nombre/em
+
+###
+POST http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+
+{  
+    "username": "felipin",
+    "email": "marta@gmail.com",
+    "password": "12345"
+}
+
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "marta@gmail.com",
+    "password": "12345"
+}
