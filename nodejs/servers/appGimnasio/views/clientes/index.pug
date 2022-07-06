@@ -1,0 +1,41 @@
+extends ../layout.pug
+
+block content
+    h2 Lista de clientes
+    // Comentario HTML
+    //- Comentario PUG
+
+    //- Modificar esta iteración para mostrar todos los datos de los clientes en una tabla
+    //- table / thead / tbody / tr / td
+    //- nombre, apellidos, direccion, email, edad, genero, fecha_nacimiento, dni, cuota
+
+    table.table
+        thead
+            tr
+                th Nombre
+                th Apellidos
+                th Email
+                th Dirección
+                th Edad
+                th Género
+                th Cuota
+                th Dni
+                th Fecha Nacimiento
+        tbody
+            each cliente in clientes
+                tr
+                    td= cliente.nombre
+                    td= cliente.apellidos
+                    td= cliente.email 
+                    td= cliente.direccion
+                    td= cliente.edad
+                    td= cliente.genero
+                    td= cliente.cuota
+                    td= cliente.dni
+                    td= cliente.fecha_nacimiento 
+    script.
+        var lastTd = document.querySelectorAll('tbody > tr > td:last-child');
+        for(let td of lastTd){
+            console.log(dayjs(td.innerText).format('DD'));
+
+        }

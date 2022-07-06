@@ -1,5 +1,5 @@
 GET http://localhost:3000/api/clientes
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImV4cERhdGUiOjE2NTcwMzU5MzgsImlhdCI6MTY1NzAzNTYzOH0.5Lj3yZ4Sga2VsYLjKvRi4QUqeAYpQ6XZJJX2CX6Ev9I
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImV4cERhdGUiOjE2NTcwOTUxOTQsImlhdCI6MTY1NzA5NDg5NH0.S0fAWUKysTYrWKWMFPoDQe1vg4PtDePxfY_4WYKlYeE
 
 ###
 POST http://localhost:3000/api/clientes
@@ -75,7 +75,7 @@ Content-Type: application/json
 
 {  
     "username": "felipin",
-    "email": "marta@gmail.com",
+    "email": "felipe@gmail.com",
     "password": "12345"
 }
 

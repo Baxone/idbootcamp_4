@@ -10,6 +10,8 @@ const Profesor = require('../../models/profesor.model');
 // });
 
 router.get('/', async (req, res) => {
+    console.log(req.user);
+    console.log(req.headers['authorization']);
     try {
         const result = await Cliente.getAll()
 

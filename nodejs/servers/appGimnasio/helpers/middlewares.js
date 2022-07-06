@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs');
 
-const checkToken = (req, res, next) => {
+const Usuario = require('../models/usuario.model');
+
+const checkToken = async (req, res, next) => {
     // 1 - Comprobar si el token viene incluido con la petición
     if (!req.headers['authorization']) {
         return res.json({ error: 'El token no está en la cabecera' });
@@ -19,15 +21,22 @@ const checkToken = (req, res, next) => {
 
     // 3 - Comprobar si el token está caducado
     // obj -> userId, expDate, iat
-    console.log(obj.expDate, dayjs().unix());
     if (dayjs().unix() > obj.expDate) {
         return res.json({ error: 'El token está caducado' });
     }
 
     // Recuperar el usuario que hace la petición
-
+    const user = await Usuario.getById(obj.userId);
+    req.user = user;
 
     next();
 }
 
-module.exports = { checkToken };
+const checkAdmin = (req, res, next) => {
+    if (req.user.role !== 'admin') {
+        return res.json({ error: 'No eres admin. Fuera' });
+    }
+    next();
+}
+
+module.exports = { checkToken, checkAdmin };
