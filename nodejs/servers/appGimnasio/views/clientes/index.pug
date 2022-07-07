@@ -33,9 +33,16 @@ block content
                     td= cliente.cuota
                     td= cliente.dni
                     td= cliente.fecha_nacimiento 
+            else
+                tr
+                    td(colspan="9") No hay clientes
     script.
         var lastTd = document.querySelectorAll('tbody > tr > td:last-child');
         for(let td of lastTd){
             console.log(dayjs(td.innerText).format('DD'));
 
         }
+
+block footer
+    footer 
+        p @Copyright 2022

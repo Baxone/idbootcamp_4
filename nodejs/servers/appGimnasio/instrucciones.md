@@ -79,3 +79,21 @@ GET /api/clientes/nombre/John
 - Recupero el cliente que vamos a modificar
 - Renderizamos la vista clientes/formularioEdit.pug y le pasamos el cliente a editar
 - Formulario para editar con los datos del cliente en cada uno de los campos
+
+## Vista para el cliente
+
+- /clientes/:clienteId
+- Recuperamos el cliente a través de su ID
+- Renderizo la vista /views/clientes/show.pug
+- En la vista muestro los datos de los clientes
+- EXTRA en la creación del cliente y en la edición (POST), la redirección la hago hacia el cliente creado o el cliente editado
+
+## Ampliaciones
+
+- Colocar botón de ver y botón de editar en cada uno de los elementos de la tabla
+- Borrar los clientes
+    - Botón en la lista
+    - Dicho botón me lleva a /clientes/delete/clienteID
+    - Borro el cliente
+    - Redirecciono a la lista
+- Filtrado de clientes (cuota, género, edad...)

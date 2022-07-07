@@ -32,4 +32,8 @@ block content
                     .mb-3
                         label.form-label Fecha Nacimiento
                         input.form-control(type="date", name="fecha_nacimiento", value=cliente.fecha_nacimiento)
+                    input(type="hidden", name="clienteId", value=cliente.id)
                     input.btn.btn-outline-info(type="submit", value="Enviar")
+    script.
+        const genero = "#{cliente.genero}"
+        console.log(genero);

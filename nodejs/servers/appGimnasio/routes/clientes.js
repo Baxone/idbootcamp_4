@@ -30,13 +30,26 @@ router.get('/delete', (req, res) => {
     res.end('Respuesta genérica');
 });
 
-router.post('/create', async (req, res) => {
-    await Cliente.create(req.body);
-    res.redirect('/clientes');
+router.get('/:clienteId', async (req, res) => {
+    try {
+        const { clienteId } = req.params;
+        const cliente = await Cliente.getById(clienteId);
+        res.render('clientes/show', { cliente });
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-router.post('/update', (req, res) => {
-    res.end('Respuesta genérica');
+router.post('/create', async (req, res) => {
+    const result = await Cliente.create(req.body);
+    res.redirect('/clientes/' + result.insertId);
+});
+
+router.post('/update', async (req, res) => {
+    const { clienteId } = req.body;
+
+    await Cliente.update(clienteId, req.body);
+    res.redirect('/clientes/' + clienteId);
 });
 
 module.exports = router;
