@@ -40,4 +40,21 @@ router.put('/:productId', async (req, res) => {
     res.json(product);
 });
 
+router.delete('/:productId', async (req, res) => {
+    const { productId } = req.params;
+
+    try {
+        // const product = await Product.findByIdAndDelete(productId);
+        const product = await Product.findOneAndDelete({
+            _id: productId
+        });
+        res.json({
+            message: 'El producto se ha borrado',
+            product
+        });
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+})
+
 module.exports = router;

@@ -8,6 +8,14 @@ var app = require('../app');
 var debug = require('debug')('chat:server');
 var http = require('http');
 
+const Mensaje = require('../models/mensaje.model');
+
+// Carga datos .env
+require('dotenv').config();
+
+// Conectar con MongoDB
+require('../config/db');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -26,9 +34,25 @@ const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
   console.log('Se ha conectado un nuevo cliente');
+  socket.broadcast.emit('mensaje_chat', {
+    nombre: 'INFO',
+    mensaje: 'Se ha conectado un nuevo usuario'
+  });
 
-  socket.on('mensaje_chat', (data) => {
+  io.emit('usuarios_chat', io.engine.clientsCount);
+
+  socket.on('mensaje_chat', async (data) => {
+    // Guardar el mensaje en la BD
+    await Mensaje.create(data);
     io.emit('mensaje_chat', data);
+  });
+
+  socket.on('disconnect', () => {
+    io.emit('mensaje_chat', {
+      nombre: 'INFO',
+      mensaje: 'Se ha desconectado un usuario'
+    });
+    io.emit('usuarios_chat', io.engine.clientsCount);
   });
 
 });
@@ -102,3 +126,9 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
+
+// - Antes de renderizar la vista index.pug recupera los 5 últimos mensajes de chat
+// - Mensaje.find().sort(PENSAR EL SORT).limit(5)
+// - Pasamos los mensajes a la vista y los mostramos

@@ -98,5 +98,30 @@ describe('Products Tests', () => {
     });
 
     // DELETE /api/products/:productId
+    describe('DELETE /api/products/:productId', () => {
+
+        let productToDelete;
+        let response;
+        beforeEach(async () => {
+            productToDelete = await Product.create({ name: 'Lápiz azul', price: 12, description: 'Lápiz de prueba', stock: 20, available: true });
+
+            response = await request(app).delete(`/api/products/${productToDelete._id}`).send();
+        });
+
+        afterEach(async () => {
+            await Product.findByIdAndDelete(productToDelete._id);
+        });
+
+        it('debería devolver una respuesta correcta', () => {
+            expect(response.statusCode).toBe(200);
+            expect(response.headers['content-type']).toContain('json');
+        });
+
+        it('el id del producto no debería estar en la BD', async () => {
+            const product = await Product.findById(productToDelete._id);
+            expect(product).toBeNull();
+        })
+
+    });
 
 });

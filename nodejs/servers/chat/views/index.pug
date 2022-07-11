@@ -3,10 +3,11 @@ extends layout
 block content
   header
     h1.animate__animated.animate__bounce 🚨 Chachi Chat 🙊
+    h2 Usuarios conectados <span id="numUsuarios"></span>
   main 
-    ul#mensajes 
-      li Persona1: Hola amiguis
-      li Persona 2: ¡Qué pasa!
+    ul#mensajes
+      each item in mensajes
+        li #{item.nombre}: #{item.mensaje}
   footer 
     div 
       label Nombre 
@@ -22,6 +23,8 @@ block content
     const inputNombre = document.getElementById('inputNombre');
     const inputMensaje = document.getElementById('inputMensaje');
     const boton = document.getElementById('btnEnviar');
+    const mensajes = document.getElementById('mensajes');
+    const numUsuarios = document.getElementById('numUsuarios');
 
     // Envío de prueba
     socket.emit('evento_prueba', { nombre: 'Mario' });
@@ -36,5 +39,11 @@ block content
     });
 
     socket.on('mensaje_chat', (data)=>{
-      console.log(data);
+      const li = document.createElement('li');
+      li.innerText = `${data.nombre}: ${data.mensaje}`;
+      mensajes.appendChild(li);
+    });
+
+    socket.on('usuarios_chat', (data)=>{
+      numUsuarios.innerText = data;
     });
