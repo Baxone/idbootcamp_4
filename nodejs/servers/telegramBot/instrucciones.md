@@ -22,3 +22,14 @@ https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=04f4f8762b4ce35df
 /donde Ballesta 26 Madrid
 
 ctx.replyWithLocation(LAT, LONG);
+
+
+# RESPUESTAS BOT
+
+- Creamos un fichero ./frases/saludos.txt con frases de saludo
+- Creamos un fichero ./frases/despedidas.txt con frases de despedidas
+
+- Si el bot entiende la frase, debemos recuperar el fichero correspondiente
+- Leemos dicho fichero y sacamos una frase aleatoria del mismo
+    - Importar librería fs
+    - Leemos los ficheros con readFile

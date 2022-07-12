@@ -20,10 +20,11 @@ bot.command('test', (ctx) => {
     ctx.reply('Estoy vivo!!');
     ctx.replyWithDice();
 });
-
 bot.command('tiempo', require('./commands/tiempo'));
 bot.command('donde', require('./commands/donde'));
 bot.command('dime', require('./commands/dime'));
+
+bot.on('text', require('./nlu'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
